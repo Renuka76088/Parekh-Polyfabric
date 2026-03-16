@@ -5,7 +5,7 @@ import heroImg from './assets/hero.png'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css'
 import Home from './Component/Home'
-import HomePage from './Pages/HomePAge'
+import HomePage from './Pages/HomePage'
 
 
 

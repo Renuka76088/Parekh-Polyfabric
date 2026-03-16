@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X, Globe, Users, Briefcase, ImageIcon, MessageSquare, FileText, Star, MessageCircle, MapPin, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-import HomePage from "../Pages/HomePAge";
+import HomePage from "../Pages/HomePage";
 import AboutPage from "../Pages/AboutPage";
 import ProductPage from "../Pages/ProductPage";
 import GalleryPage from "../Pages/GalleryPage";
