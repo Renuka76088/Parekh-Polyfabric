@@ -1,82 +1,176 @@
-import React from 'react';
+import { useState, useEffect } from "react";
 
-const TextileAssociates = () => {
-  const overlayPoints = [
-    { label: "Parekh Fabrics", style: "top-[45.6%] left-[24.3%]" },
-    { label: "Parekh Silk", style: "top-[52.8%] left-[27.2%]" },
-    { label: "Parekh e-Trade Market", style: "top-[65.5%] left-[40.5%]" },
-    { label: "Chamber of Textile", style: "top-[75.3%] left-[33.6%]" },
-    { label: "Parekh Rayon", style: "top-[52.8%] left-[48%]" },
-    { label: "Parekh Linen", style: "top-[47.7%] left-[62.4%]" },
-    { label: "Parekh Southern Polyfabrics", style: "top-[77.2%] left-[54.4%]" },
-  ];
+const locations = [
+  { id: 1, name: "Parekh Fabrics", city: "Ahmedabad", short: "Fabrics", x: 300, y: 475 },
+  { id: 2, name: "Parekh Silk", city: "Surat", short: "Silk", x: 330, y: 550 },
+  { id: 3, name: "Parekh Rayon", city: "Raipur", short: "Rayon", x: 488, y: 505 },
+  { id: 4, name: "Parekh Linen", city: "Kolkata", short: "Linen", x: 625, y: 515 },
+  { id: 5, name: "Parekh e-Trade Market", city: "Hyderabad", short: "e-Trade", x: 450, y: 635 },
+  { id: 6, name: "Parekh Chamber of Textile", city: "Bangalore", short: "Chamber", x: 405, y: 755 },
+  { id: 7, name: "Parekh Southern Polyfabrics", city: "Chennai", short: "Southern", x: 475, y: 755 },
+];
 
-  const mapDots = [
-    { class: "top-[75%] left-[45%]" }, { class: "top-[60%] left-[50%]" },
-    { class: "top-[55%] left-[30%]" }, { class: "top-[78%] left-[55%]" },
-    { class: "top-[40%] left-[20%]" }, { class: "top-[55%] left-[75%]" },
-    { class: "top-[48%] left-[60%]" }, { class: "top-[45%] left-[48%]" },
-  ];
+const PIN_COLOR = "#8b1a1a";
+
+function Pin({ loc, index, active, onClick }) {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), index * 120 + 100);
+    return () => clearTimeout(t);
+  }, [index]);
+
+  let labelX = loc.x;
+  let labelY = loc.y - 35;
+  let textAnchor = "middle";
+
+  if (loc.id === 6) {
+    labelX = loc.x - 40;
+    labelY = loc.y - 5;
+    textAnchor = "end";
+  } else if (loc.id === 7) {
+    labelX = loc.x + 40;
+    labelY = loc.y - 5;
+    textAnchor = "start";
+  }
 
   return (
-    <div className="max-w-7xl mx-auto my-10 px-6 font-sans text-stone-900">
-      {/* Header */}
-      <div className="text-center border-b-2 border-[#2d0a4e] pb-6 mb-12">
-        <h1 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tighter text-[#2d0a4e]">Textile Industry Network Map</h1>
-        <p className="text-[#800000] font-bold uppercase mt-3 tracking-widest text-lg">H.C. Parekh & Associates • F.Y. 2025-27</p>
-      </div>
+    <g
+      onClick={() => onClick(loc.id)}
+      style={{ opacity: visible ? 1 : 0, cursor: "pointer" }}
+    >
+      {/* 🔴 Blink dot */}
+   <circle cx={loc.x} cy={loc.y} r="6" fill="#d32f2f">
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        {/* Map Box */}
-        <div className="relative bg-stone-900 aspect-square lg:aspect-[1/1.1] border-2 border-[#2d0a4e] overflow-hidden group hover:-translate-x-2 hover:-translate-y-2 hover:shadow-[10px_10px_0px_#800000] transition-all">
-          <img 
-            src="https://img.freepik.com/premium-vector/highly-detailed-india-map-with-outline-state-country-borders-vector-illustration_1234516-172.jpg" 
-            alt="Map" 
-            className="w-full h-full object-contain grayscale"
+        <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite" />
+      </circle>
+
+      {/* Glow */}
+      <circle cx={loc.x} cy={loc.y} r="10" fill="none" stroke="#d32f2f">
+        <animate attributeName="r" values="10;22" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.7;0" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+
+      {/* ✅ TEXT (NAME + CITY) */}
+      <text
+        x={labelX}
+        y={labelY}
+        textAnchor={textAnchor}
+        fontSize="14"
+        fontWeight="700"
+        fill="#1a237e"
+      >
+        <tspan x={labelX}>{loc.name}</tspan>
+        <tspan x={labelX} dy="16" fontSize="12" fill="#444">
+          {loc.city}
+        </tspan>
+      </text>
+    </g>
+  );
+}
+
+export default function  TextileAssociates() {
+  const [active, setActive] = useState(null);
+
+  return (
+    <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+      
+
+
+      {/* MAP */}
+    <svg
+  viewBox="0 0 1000 1000"
+  style={{
+    width: "100%",
+    display: "block",
+    margin: "0 auto"   // ✅ CENTER FIX
+  }}
+>
+
+
+        {/* ✅ PERFECT BACKGROUND */}
+  <svg
+  viewBox="0 0 1000 1000"
+  style={{
+    width: "100%",
+    display: "block",
+    margin: "0 auto"
+  }}
+>
+
+
+  {/* 🔲 OUTER BORDER BOX */}
+  <rect
+    x="20"
+    y="20"
+    width="960"
+    height="960"
+    fill="none"
+    stroke="#000"
+    strokeWidth="2"
+  />
+{/* 🏷️ MAIN HEADING - Dark Blue Color */}
+  <text
+    x="500"
+    y="90"  /* Positioning adjusted for better visibility */
+    textAnchor="middle"
+    fontSize="34"
+    fontWeight="800"
+    fill="#1a237e" /* Deep Navy Blue */
+    style={{ letterSpacing: "1.5px", fontFamily: 'Arial, sans-serif' }}
+  >
+    HC PAREKH & ASSOCIATES
+  </text>
+
+  {/* 🌐 SUBTEXT - Red Color */}
+  <text
+    x="500"
+    y="120"
+    textAnchor="middle"
+    fontSize="16"
+    fontWeight="600"
+    fill="#d32f2f" /* Professional Red */
+    style={{ letterSpacing: "1px" }}
+  >
+    www.hcparekh.com
+  </text>
+
+  {/* 🗺️ IMAGE (center me) */}
+  <image
+    href="https://img.freepik.com/premium-vector/vector-map-black-outline-india-vector-illustration_686498-514.jpg?w=1060"
+    x="40"
+    y="40"
+    width="920"
+    height="920"
+    preserveAspectRatio="xMidYMid meet"  // ✅ correct centering
+    opacity="0.5"
+  />
+
+  {/* Pins */}
+  {locations.map((loc, i) => (
+    <Pin
+      key={loc.id}
+      loc={loc}
+      index={i}
+      active={active === loc.id}
+      onClick={setActive}
+    />
+  ))}
+
+</svg>
+
+        {/* Pins */}
+        {locations.map((loc, i) => (
+          <Pin
+            key={loc.id}
+            loc={loc}
+            index={i}
+            active={active === loc.id}
+            onClick={setActive}
           />
-          
-          {/* Overlay Points */}
-          {overlayPoints.map((p, i) => (
-            <div key={i} className={`absolute bg-[#2d0a4e]/90 text-white text-[10px] font-bold px-1.5 py-0.5 whitespace-nowrap transform -translate-x-1/2 -translate-y-1/2 ${p.style}`}>
-              {p.label}
-            </div>
-          ))}
-
-          {/* Map Dots */}
-          {mapDots.map((d, i) => (
-            <div key={i} className={`absolute w-3 h-3 bg-[#800000] rounded-full cursor-pointer animate-pulse ${d.class}`} />
-          ))}
-        </div>
-
-        {/* Info Box */}
-        <div className="grid grid-cols-2 gap-4">
-          <div className="border-2 border-[#2d0a4e] p-6 text-center hover:border-[#800000] transition-colors">
-            <h3 className="text-xs font-bold uppercase text-[#800000] mb-2">Total Cities</h3>
-            <p className="text-4xl font-extrabold text-[#2d0a4e]">08</p>
-          </div>
-          <div className="border-2 border-[#2d0a4e] p-6 text-center hover:border-[#800000] transition-colors">
-            <h3 className="text-xs font-bold uppercase text-[#800000] mb-2">Active Tenders</h3>
-            <p className="text-4xl font-extrabold text-[#2d0a4e]">12</p>
-          </div>
-
-          <div className="col-span-2 border-2 border-[#2d0a4e] p-6 bg-white">
-            <h4 className="text-xs font-bold uppercase text-[#800000] mb-4">Association Key Locations</h4>
-            <div className="grid grid-cols-2 gap-y-3 font-semibold text-sm">
-              {['Bengaluru', 'Hyderabad', 'Pune', 'Chennai', 'Ahmedabad', 'Bhubaneswar', 'Raipur', 'Nagpur'].map(city => (
-                <span key={city} className="flex items-center">
-                  <span className="text-[#800000] mr-2">→</span> {city}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <footer className="mt-16 text-center pt-8 border-t border-stone-300 text-[10px] font-bold uppercase text-stone-400">
-        HC Parekh & Associates | Leading Industrial Consultant Since 2007
-      </footer>
+        ))}
+      </svg>
     </div>
   );
-};
+}
 
-export default TextileAssociates;

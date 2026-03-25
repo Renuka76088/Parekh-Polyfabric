@@ -18,7 +18,7 @@ import AppointmentForm from "../Pages/AppointmentForm";
 import MediaGallery from "../Pages/MediaGallery";
 import TextileAssociates from "../Pages/TextileAssociates";
 import ContactUs from "../Pages/ContactUs";
-
+import logo from "../assets/logo.png"
 // --- AAPKE COMPONENTS KO YAHAN IMPORT KAREIN ---
 
 const menuItems = [
@@ -27,9 +27,9 @@ const menuItems = [
   { name: 'Product Page', icon: <Briefcase size={20}/> },
   { name: 'Product Photo Gallery', icon: <ImageIcon size={20}/> },
   { name: 'Our Management', icon: <Users size={20}/> },
-  { name: 'Trade Enquiry (e-Form)', icon: <MessageSquare size={20}/> },
-  { name: 'e-Quotation (e-Form)', icon: <FileText size={20}/> },
-  { name: 'e-Auction (e-Form)', icon: <FileText size={20}/> },
+  { name: 'Trade Enquiry ', icon: <MessageSquare size={20}/> },
+  { name: 'e-Quotation', icon: <FileText size={20}/> },
+  { name: 'e-Auction', icon: <FileText size={20}/> },
   { name: 'Tender & Contract', icon: <FileText size={20}/> },
   { name: 'Career Page', icon: <Briefcase size={20}/> },
   { name: 'Circular', icon: <FileText size={20}/> },
@@ -53,9 +53,9 @@ const Home = () => {
       case "Product Page": return <ProductPage />;
       case "Product Photo Gallery": return <GalleryPage />;
       case "Our Management": return <ManagementPage />;
-      case "Trade Enquiry (e-Form)": return < MembershipForm />;
-      case "e-Quotation (e-Form)": return < QuotationForm />;
-      case "e-Auction (e-Form)": return < AuctionForm />;
+      case "Trade Enquiry": return < MembershipForm />;
+      case "e-Quotation": return < QuotationForm />;
+      case "e-Auction": return < AuctionForm />;
       case "Tender & Contract": return <TenderPage/>;
       case "Career Page": return <CareerPage/>;
       case "Circular": return <Circular/>;
@@ -102,9 +102,10 @@ const Home = () => {
         <div className="p-8">
           {/* Logo Section */}
           <div className="mb-10 pt-4 md:pt-0 text-left">
-            <h2 className="text-2xl font-serif font-extrabold text-[#1a1a1a] leading-tight">
-              PAREKH <br/><span className="text-[#C5A059]">SOUTHERN</span>
-            </h2>
+          <div className="flex items-center">
+             {/* h-8 ya h-10 ko apne logo ke hisaab se adjust karein */}
+             <img src={logo} st alt="Logo" className="h-8 md:h-15 w-auto object-contain" />
+           </div>
             <p className="text-[10px] uppercase tracking-[3px] text-gray-400 mt-2 font-bold border-b border-[#C5A059] inline-block pb-1">
               POLYFABRICS
             </p>
