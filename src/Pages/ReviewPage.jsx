@@ -94,10 +94,6 @@ const ReviewPage = () => {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="py-10 text-center bg-[#fcfcfc]">
-        <p className="text-[10px] text-gray-400 uppercase tracking-[0.5em] font-black">Parekh Southern Polyfabric • Enterprise Excellence</p>
-      </footer>
 
     </div>
   );

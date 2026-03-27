@@ -126,18 +126,11 @@ const ManagementPage = () => {
           <button className="bg-[#800000] text-white px-12 py-4 text-xs font-bold uppercase tracking-[0.3em] hover:bg-[#C5A059] transition-all duration-500">
             Contact for MOU
           </button>
-          <div className="mt-12 text-[#800000] font-black text-xs tracking-[0.5em] uppercase">
-            Southern Polyfabrics Management Board
-          </div>
+       
         </div>
       </section>
 
-      {/* --- SIMPLE FOOTER --- */}
-      <footer className="py-10 text-center border-t border-gray-100">
-        <p className="text-[10px] text-gray-400 font-bold tracking-[0.6em] uppercase">
-          Southern Polyfabrics Group • Industrial Excellence • 2026
-        </p>
-      </footer>
+   
 
     </div>
   );

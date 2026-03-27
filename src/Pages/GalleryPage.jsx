@@ -88,12 +88,6 @@ const GalleryPage = () => {
           ))}
         </div>
 
-        {/* Minimal Footer */}
-        <footer className="mt-32 pt-8 border-t border-gray-100 text-center">
-          <p className="text-[10px] text-gray-400 uppercase tracking-[0.4em]">
-            © 2026 Southern Polyfabrics • Industrial Excellence
-          </p>
-        </footer>
 
       </div>
     </div>

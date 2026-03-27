@@ -52,10 +52,7 @@ const AppointmentForm = () => {
           </button>
         </form>
 
-        {/* Footer Note */}
-        <p className="text-center text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-8">
-          H.C. Parekh & Associates • Industrial Division
-        </p>
+    
       </div>
     </div>
   );

@@ -97,22 +97,7 @@ const CircularPage = () => {
         </div>
       </section>
 
-      {/* --- CORPORATE FOOTER --- */}
-      <footer className="bg-[#2d0a4e] py-16 px-6 text-white overflow-hidden relative">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10 gap-10">
-          <div className="text-center md:text-left">
-            <h3 className="text-2xl font-black uppercase tracking-tighter">Administration Division</h3>
-            <p className="text-[#f1c40f] font-bold uppercase tracking-[0.2em] text-sm mt-2">Parekh Southern Polyfabric HQ</p>
-          </div>
-          
-          <div className="text-center md:text-right">
-            <p className="text-white/50 text-xs font-bold uppercase tracking-widest">Headquarters Address</p>
-            <p className="text-lg font-medium mt-1">118, Regus AB Road, Indore, MP</p>
-          </div>
-        </div>
-        {/* Abstract circle in footer */}
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-32 translate-y-32"></div>
-      </footer>
+
 
     </div>
   );

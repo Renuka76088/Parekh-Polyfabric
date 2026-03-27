@@ -25,7 +25,7 @@ const BlogPage = () => {
       title: "Sustainability in Large-Scale Fabric Production",
       date: "Feb 28, 2026",
       img: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=800",
-      excerpt: "Implementing eco-friendly loom practices without compromising on material strength or quality in our Indore units."
+      excerpt: "Implementing eco-friendly loom practices without compromising on material strength or quality in our CHENNAI, TN units."
     }
   ];
 
@@ -107,18 +107,7 @@ const BlogPage = () => {
 
     
 
-      {/* --- FOOTER --- */}
-      <footer className="py-12 border-t border-gray-100 bg-[#FAF9F6]">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[11px] font-black text-[#2d0a4e] uppercase tracking-[0.4em]">
-            Parekh Southern Polyfabric Journal • 2026
-          </p>
-          <div className="flex gap-8 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-            <span className="hover:text-[#800000] cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-[#800000] cursor-pointer">Terms of Service</span>
-          </div>
-        </div>
-      </footer>
+   
     </div>
   );
 };

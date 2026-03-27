@@ -9,7 +9,7 @@ const QuotationForm = () => {
         {/* Header Section */}
         <div className="flex justify-between items-start mb-16 border-b border-gray-200 pb-10">
           <div>
-            <h1 className="text-5xl font-black text-[#3C2A21] uppercase tracking-tighter" style={{color:'#800000'}} >e-Quotation</h1>
+            <h1 className="text-5xl font-black text-[#3C2A21]  tracking-tighter" style={{color:'#800000'}} >e-Quotation</h1>
             <p className="text-xl text-gray-600 mt-4 font-medium"  style={{color:'#2d0a4e'}}>Request a Price Quote for Bulk Requirements</p>
           </div>
           <FileText size={48} className="text-[#8E735B]" />
@@ -60,11 +60,7 @@ const QuotationForm = () => {
         </form>
       </div>
       
-      {/* Visual Reference for Supply Chain Workflow */}
-      <div className="max-w-5xl mx-auto mt-16 text-center">
-        <p className="text-lg font-bold text-gray-500 mb-8 uppercase tracking-widest">Our Quotation Workflow</p>
-        
-      </div>
+  
     </div>
   );
 };

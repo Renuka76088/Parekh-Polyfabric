@@ -104,12 +104,7 @@ const ProductPage = () => {
           ))}
         </div>
 
-        {/* Footer */}
-        <footer className="mt-24 pt-10 border-t border-gray-200 text-center">
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-            Parekh Southern Fabrics • Industrial Grade • 2026
-          </p>
-        </footer>
+      
 
       </div>
     </div>

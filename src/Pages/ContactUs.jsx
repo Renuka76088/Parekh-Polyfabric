@@ -31,8 +31,8 @@ const ContactUs = () => {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm uppercase tracking-wider mb-1">Indore Headquarters</h4>
-                  <p className="text-stone-500">Sector C, Sanwer Road Industrial Area, <br/>Indore, Madhya Pradesh 452015</p>
+                  <h4 className="font-bold text-sm uppercase tracking-wider mb-1">CHENNAI, TN Headquarters</h4>
+                  <p className="text-stone-500"><br/>CHENNAI, TN</p>
                 </div>
               </div>
 
@@ -42,7 +42,7 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-sm uppercase tracking-wider mb-1">Direct Line</h4>
-                  <p className="text-stone-500">+91 731 400 5000</p>
+                  <p className="text-stone-500">+91 1111 1111</p>
                 </div>
               </div>
 
@@ -97,11 +97,11 @@ const ContactUs = () => {
                 <div className="text-center p-6">
                   <MapPin size={32} className="mx-auto mb-2 text-black" />
                   <p className="font-bold text-sm uppercase tracking-widest">View on Google Maps</p>
-                  <p className="text-xs text-stone-500 mt-1">Sanwer Road Industrial Area, Indore</p>
+                  <p className="text-xs text-stone-500 mt-1">CHENNAI, TN</p>
                 </div>
               </div>
               <a 
-                href="https://www.google.com/maps/search/Sanwer+Road+Industrial+Area+Indore" 
+                href="https://www.google.com/maps/search/Sanwer+Road+Industrial+Area+CHENNAI" 
                 target="_blank" 
                 className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
               >
@@ -115,9 +115,7 @@ const ContactUs = () => {
         </div>
       </main>
       
-      <footer className="py-10 text-center border-t border-gray-50 text-stone-400 text-xs font-medium uppercase tracking-[0.3em]">
-        Authentic Indian Textiles • Since 1995
-      </footer>
+
     </div>
   );
 };

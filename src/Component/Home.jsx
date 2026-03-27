@@ -27,7 +27,7 @@ const menuItems = [
   { name: 'Product Page', icon: <Briefcase size={20}/> },
   { name: 'Product Photo Gallery', icon: <ImageIcon size={20}/> },
   { name: 'Our Management', icon: <Users size={20}/> },
-  { name: 'Trade Enquiry ', icon: <MessageSquare size={20}/> },
+  { name: 'Trade Enquiry', icon: <MessageSquare size={20}/> },
   { name: 'e-Quotation', icon: <FileText size={20}/> },
   { name: 'e-Auction', icon: <FileText size={20}/> },
   { name: 'Tender & Contract', icon: <FileText size={20}/> },
@@ -53,7 +53,7 @@ const Home = () => {
       case "Product Page": return <ProductPage />;
       case "Product Photo Gallery": return <GalleryPage />;
       case "Our Management": return <ManagementPage />;
-      case "Trade Enquiry": return < MembershipForm />;
+      case "Trade Enquiry": return <MembershipForm/>;
       case "e-Quotation": return < QuotationForm />;
       case "e-Auction": return < AuctionForm />;
       case "Tender & Contract": return <TenderPage/>;

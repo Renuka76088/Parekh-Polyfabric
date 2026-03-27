@@ -106,12 +106,7 @@ const CareersPage = () => {
           ))}
         </div>
 
-        {/* --- SHARED FOOTER --- */}
-        <footer className="mt-20 py-10 border-t border-gray-200 text-center">
-          <p className="text-xs font-black text-[#2d0a4e] uppercase tracking-[0.5em]">
-            HC Parekh & Associates • Industrial Excellence • 2026
-          </p>
-        </footer>
+ 
       </div>
     </div>
   );
