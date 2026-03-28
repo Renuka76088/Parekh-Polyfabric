@@ -7,7 +7,7 @@ const ContactUs = () => {
       
       {/* --- CLEAN NAVIGATION STRIP --- */}
       <nav className="py-6 px-10 flex justify-between items-center border-b border-gray-50">
-        <div className="text-xl font-bold tracking-tighter uppercase">Pareekh<span className="text-stone-400">Fabrics</span></div>
+        <div className="text-xl font-bold tracking-tighter uppercase">Parekh<span className="text-stone-400">Fabrics</span></div>
         <div className="text-[13px] font-medium uppercase tracking-widest text-stone-500">Made in India</div>
       </nav>
 
@@ -52,7 +52,7 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-sm uppercase tracking-wider mb-1">Orders & Inquiries</h4>
-                  <p className="text-stone-500">support@pareekhindia.in</p>
+                  <p className="text-stone-500">info@parekhpolyfabrics.in</p>
                 </div>
               </div>
             </div>
