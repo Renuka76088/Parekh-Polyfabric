@@ -1,121 +1,143 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Send, Instagram, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Instagram, Linkedin, ExternalLink, Leaf } from 'lucide-react';
 
 const ContactUs = () => {
   return (
-    <div className="min-h-screen bg-white text-[#1a1a1a] font-sans text-[17px] selection:bg-[#f3e8df]">
+    // Background ko ek premium cream-gold tint diya hai
+    <div className="min-h-screen bg-[#fffcf7] text-[#2d0a4e] font-serif selection:bg-[#2d0a4e] selection:text-white">
       
-      {/* --- CLEAN NAVIGATION STRIP --- */}
-      <nav className="py-6 px-10 flex justify-between items-center border-b border-gray-50">
-        <div className="text-xl font-bold tracking-tighter uppercase">Parekh<span className="text-stone-400">Fabrics</span></div>
-        <div className="text-[13px] font-medium uppercase tracking-widest text-stone-500">Made in India</div>
+      {/* --- PREMIUM NAVIGATION --- */}
+      {/* Top border with Maroon (#800000) */}
+      <nav className="py-6 px-10 flex justify-between items-center bg-white border-b-4 border-[#800000] shadow-md transition-all">
+        <div className="flex items-center gap-3">
+     
+          <div className="text-3xl font-bold tracking-tight text-[#2d0a4e]">
+            Parekh Southern Polyfabrics
+          </div>
+        </div>
+        <div className="hidden md:block text-[12px] font-bold uppercase tracking-[0.3em] text-[#800000]">
+          The Heritage of Chennai
+        </div>
       </nav>
 
       <main className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* LEFT: TEXT & INFO */}
           <div className="space-y-12">
             <div className="space-y-6">
-              <h1 className="text-5xl font-bold tracking-tight leading-[1.1]">
-                Let's discuss your <br/> <span className="text-stone-400">textile needs.</span>
+              {/* Heading with Purple (#2d0a4e) and Maroon (#800000) mix */}
+              <h1 className="text-6xl font-black tracking-tight leading-[1.1] text-[#2d0a4e]">
+                Let's weave your <br/> 
+                <span className="text-[#800000] font-medium italic">vision together.</span>
               </h1>
-              <p className="text-stone-500 max-w-md leading-relaxed">
-                Operating exclusively within India, we bring the finest weaves from the heart of Madhya Pradesh to your doorstep.
+              <p className="text-[#2d0a4e]/80 max-w-md leading-relaxed text-lg font-sans">
+                Experience the finest textile craftsmanship from Tamil Nadu. Our Chennai headquarters is dedicated to bringing you premium quality and timeless traditions.
               </p>
             </div>
 
-            <div className="space-y-10">
-              <div className="flex gap-6 items-start group">
-                <div className="w-12 h-12 rounded-full bg-stone-50 flex items-center justify-center shrink-0 group-hover:bg-black group-hover:text-white transition-all">
-                  <MapPin size={20} />
+            <div className="space-y-8">
+              {/* Contact Cards using Deep Purple & Maroon accents */}
+              <div className="flex gap-6 items-center group bg-white p-6 rounded-3xl shadow-sm border border-[#2d0a4e]/5 hover:border-[#800000] hover:shadow-xl hover:shadow-[#800000]/5 transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-[#2d0a4e] flex items-center justify-center shrink-0 text-white group-hover:bg-[#800000] transition-colors shadow-lg">
+                  <MapPin size={26} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm uppercase tracking-wider mb-1">CHENNAI, TN Headquarters</h4>
-                  <p className="text-stone-500"><br/>CHENNAI, TN</p>
+                  <h4 className="font-bold text-xs uppercase tracking-[0.2em] mb-1 text-[#800000]">Headquarters</h4>
+                  <p className="text-[#2d0a4e] text-xl font-bold">Chennai, Tamil Nadu</p>
                 </div>
               </div>
 
-              <div className="flex gap-6 items-start group">
-                <div className="w-12 h-12 rounded-full bg-stone-50 flex items-center justify-center shrink-0 group-hover:bg-black group-hover:text-white transition-all">
-                  <Phone size={20} />
+              <div className="flex gap-6 items-center group bg-white p-6 rounded-3xl shadow-sm border border-[#2d0a4e]/5 hover:border-[#800000] hover:shadow-xl hover:shadow-[#800000]/5 transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-[#2d0a4e] flex items-center justify-center shrink-0 text-white group-hover:bg-[#800000] transition-colors shadow-lg">
+                  <Phone size={26} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm uppercase tracking-wider mb-1">Direct Line</h4>
-                  <p className="text-stone-500">+91 1111 1111</p>
+                  <h4 className="font-bold text-xs uppercase tracking-[0.2em] mb-1 text-[#800000]">Direct Line</h4>
+                  <p className="text-[#2d0a4e] text-xl font-bold">+91 1111 1111</p>
                 </div>
               </div>
 
-              <div className="flex gap-6 items-start group">
-                <div className="w-12 h-12 rounded-full bg-stone-50 flex items-center justify-center shrink-0 group-hover:bg-black group-hover:text-white transition-all">
-                  <Mail size={20} />
+              <div className="flex gap-6 items-center group bg-white p-6 rounded-3xl shadow-sm border border-[#2d0a4e]/5 hover:border-[#800000] hover:shadow-xl hover:shadow-[#800000]/5 transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-[#2d0a4e] flex items-center justify-center shrink-0 text-white group-hover:bg-[#800000] transition-colors shadow-lg">
+                  <Mail size={26} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm uppercase tracking-wider mb-1">Orders & Inquiries</h4>
-                  <p className="text-stone-500">info@parekhpolyfabrics.in</p>
+                  <h4 className="font-bold text-xs uppercase tracking-[0.2em] mb-1 text-[#800000]">Inquiries</h4>
+                  <p className="text-[#2d0a4e] text-xl font-bold">info@parekhpolyfabrics.in</p>
                 </div>
               </div>
             </div>
 
-            {/* SIMPLE SOCIALS */}
-            <div className="flex gap-8 pt-6 border-t border-gray-100">
-              <a href="#" className="flex items-center gap-2 font-bold text-sm uppercase tracking-widest hover:opacity-50">
-                <Instagram size={18} /> Instagram
+            {/* SOCIALS */}
+            <div className="flex gap-10 pt-8 border-t border-[#2d0a4e]/10">
+              <a href="#" className="flex items-center gap-2 font-bold text-sm uppercase tracking-widest text-[#2d0a4e] hover:text-[#800000] transition-colors">
+                <Instagram size={20} /> Instagram
               </a>
-              <a href="#" className="flex items-center gap-2 font-bold text-sm uppercase tracking-widest hover:opacity-50">
-                <Linkedin size={18} /> LinkedIn
+              <a href="#" className="flex items-center gap-2 font-bold text-sm uppercase tracking-widest text-[#2d0a4e] hover:text-[#800000] transition-colors">
+                <Linkedin size={20} /> LinkedIn
               </a>
             </div>
           </div>
 
-          {/* RIGHT: CLEAN FORM & MINI MAP */}
-          <div className="space-y-8">
-            <div className="bg-[#fcfcfc] border border-gray-100 p-10 rounded-[2rem]">
-              <form className="space-y-8">
-                <div className="space-y-1">
-                  <label className="text-[12px] font-bold uppercase tracking-widest text-stone-400">Your Name</label>
-                  <input type="text" className="w-full bg-transparent border-b border-stone-200 py-3 outline-none focus:border-black transition-colors placeholder:text-stone-300" placeholder="John Doe" />
+          {/* RIGHT: CONTACT FORM & MAP */}
+          <div className="space-y-10">
+            <div className="bg-[#2d0a4e] p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
+              {/* Decorative circle for South vibe */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#800000]/20 rounded-full blur-3xl"></div>
+              
+              <form className="space-y-8 relative z-10">
+                <h3 className="text-3xl font-bold text-white mb-10">Inquiry Form</h3>
+                
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">Your Name</label>
+                  <input type="text" className="w-full bg-transparent border-b border-white/20 py-3 outline-none focus:border-[#800000] transition-colors text-white placeholder:text-white/20 font-sans" placeholder="Rajesh Kumar" />
                 </div>
-                <div className="space-y-1">
-                  <label className="text-[12px] font-bold uppercase tracking-widest text-stone-400">Email Address</label>
-                  <input type="email" className="w-full bg-transparent border-b border-stone-200 py-3 outline-none focus:border-black transition-colors placeholder:text-stone-300" placeholder="john@example.in" />
+                
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">Email Address</label>
+                  <input type="email" className="w-full bg-transparent border-b border-white/20 py-3 outline-none focus:border-[#800000] transition-colors text-white placeholder:text-white/20 font-sans" placeholder="rajesh@chennai.in" />
                 </div>
-                <div className="space-y-1">
-                  <label className="text-[12px] font-bold uppercase tracking-widest text-stone-400">Project Details</label>
-                  <textarea rows="4" className="w-full bg-transparent border-b border-stone-200 py-3 outline-none focus:border-black transition-colors placeholder:text-stone-300" placeholder="Tell us about your requirements..."></textarea>
+                
+                <div className="space-y-2">
+                  <label className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">Requirements</label>
+                  <textarea rows="4" className="w-full bg-transparent border-b border-white/20 py-3 outline-none focus:border-[#800000] transition-colors text-white placeholder:text-white/20 font-sans" placeholder="How can we help you?"></textarea>
                 </div>
-                <button className="w-full py-5 bg-black text-white font-bold uppercase tracking-[0.2em] text-[13px] hover:bg-stone-800 transition-colors rounded-xl">
-                  Send Message
+                
+                <button className="w-full flex items-center justify-center gap-4 py-5 bg-[#800000] text-white font-bold uppercase tracking-[0.25em] text-[14px] hover:bg-white hover:text-[#800000] transition-all duration-300 rounded-2xl shadow-xl active:scale-95">
+                  Send Message <Send size={18} />
                 </button>
               </form>
             </div>
 
-            {/* INTEGRATED MAP VIEW */}
-            <div className="relative group overflow-hidden rounded-[2rem] border border-gray-100 h-[250px]">
-              {/* Note: This is a visual representation for the code. Use Google Maps API for actual rendering. */}
-              <div className="absolute inset-0 bg-stone-200 flex items-center justify-center">
-                <div className="text-center p-6">
-                  <MapPin size={32} className="mx-auto mb-2 text-black" />
-                  <p className="font-bold text-sm uppercase tracking-widest">View on Google Maps</p>
-                  <p className="text-xs text-stone-500 mt-1">CHENNAI, TN</p>
-                </div>
-              </div>
-              <a 
-                href="https://www.google.com/maps/search/Sanwer+Road+Industrial+Area+CHENNAI" 
-                target="_blank" 
-                className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
-              >
-                <div className="bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-xs font-bold">
-                  Open Maps <ExternalLink size={14} />
-                </div>
-              </a>
-            </div>
+         {/* CHENNAI MAP BOX */}
+<div className="relative group overflow-hidden rounded-[3rem] border-8 border-white shadow-2xl h-[320px]">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.886539092!2d80.0689241!3d13.0474878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d333f%3A0x6d3e707106521c52!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+    width="100%" 
+    height="100%" 
+    style={{ border: 0 }} 
+    allowFullScreen="" 
+    loading="lazy" 
+    referrerPolicy="no-referrer-when-downgrade"
+    className="absolute inset-0 grayscale-[0.2] contrast-[1.1]"
+  ></iframe>
+  
+  <a 
+    href="https://www.google.com/maps/search/?api=1&query=Chennai+Tamil+Nadu" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="absolute bottom-6 left-6 bg-[#2d0a4e] text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-3 text-sm font-bold hover:bg-[#800000] transition-all z-10"
+  >
+    Navigate to Chennai <ExternalLink size={16} />
+  </a>
+</div>
           </div>
 
         </div>
       </main>
-      
 
+  
     </div>
   );
 };
