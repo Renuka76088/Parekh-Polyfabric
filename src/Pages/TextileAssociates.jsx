@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 const locations = [
   { id: 1, name: "Parekh Fabrics", city: "Ahmedabad", short: "Fabrics", x: 300, y: 475 },
   { id: 2, name: "Parekh Silk", city: "Surat", short: "Silk", x: 330, y: 550 },
-  { id: 3, name: "Parekh Rayon", city: "Raipur", short: "Rayon", x: 488, y: 505 },
+  { id: 3, name: "Parekh Rayon", city: "Raipur", short: "Rayon", x: 495, y: 525 },
   { id: 4, name: "Parekh Linen", city: "Kolkata", short: "Linen", x: 625, y: 515 },
-  { id: 5, name: "Parekh e-Trade Market (Textile)", city: "Hyderabad", short: "e-Trade", x: 450, y: 635 },
-  { id: 6, name: "Parekh Chamber of Textile", city: "Bangalore", short: "Chamber", x: 405, y: 755 },
+  { id: 5, name: "Parekh e-Trade Market (Textile)", city: "Hyderabad", short: "e-Trade", x: 450, y: 605 },
+  { id: 6, name: "Parekh Chamber of Textile", city: "Bangalore", short: "Chamber", x: 390, y: 720 },
   { id: 7, name: "Parekh Southern Polyfabrics", city: "Chennai", short: "Southern", x: 475, y: 755 },
 ];
 
