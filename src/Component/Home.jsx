@@ -99,44 +99,70 @@ const Home = () => {
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
         md:translate-x-0 overflow-y-auto scrollbar-thin
       `}>
-        <div className="p-8">
-          {/* Logo Section */}
-          <div className="mb-10 pt-4 md:pt-0 text-left">
-          <div className="flex items-center">
-             {/* h-8 ya h-10 ko apne logo ke hisaab se adjust karein */}
-             <img src={logo} st alt="Logo" className="h-8 md:h-15 w-auto object-contain" />
-           </div>
-            <p className="text-[10px] uppercase tracking-[3px] text-gray-400 mt-2 font-bold border-b border-[#C5A059] inline-block pb-1">
-              POLYFABRICS
-            </p>
-          </div>
+      <div className="p-8">
+  {/* Logo Section - Custom Designed */}
+  <div className="mb-10 pt-4 md:pt-0">
+   <div className="flex items-center gap-3 py-2">
+  
+  {/* 1. ICON SQUARE (Purple with White 'P') */}
+  <div className="w-10 h-10 bg-[#2d0a4e] rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
+    <span className="text-xl font-black text-white italic">P</span>
+  </div>
 
-          {/* Navigation Items */}
-          <nav>
-            <ul className="space-y-1">
-              {menuItems.map((item) => (
-                <li key={item.name}>
-                  <button
-                    onClick={() => {
-                      setActivePage(item.name);
-                      setIsSidebarOpen(false);
-                    }}
-                    className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-xl text-[15px] font-medium transition-all duration-200 text-left
-                      ${activePage === item.name 
-                        ? 'bg-[#F2EFE9] text-[#8B4513] shadow-sm' 
-                        : 'text-gray-500 hover:bg-gray-50 hover:text-[#C5A059]'}
-                    `}
-                  >
-                    <span className={activePage === item.name ? 'text-[#8B4513]' : 'text-gray-400'}>
-                      {item.icon}
-                    </span>
-                    {item.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
+  {/* 2. TEXT BLOCK (Vertical Stack) */}
+  <div className="flex flex-col justify-center leading-none">
+    
+    {/* LINE 1: PAREKH SOUTHERN */}
+    <h1 className="text-[14px] md:text-[16px] font-black uppercase tracking-tight flex items-center gap-1.5">
+      <span className="text-[#2d0a4e]">PAREKH</span>
+      <span className="text-[#800000]">SOUTHERN</span>
+    </h1>
+    
+    {/* LINE 2: POLYFABRICS (Specifically on the second line) */}
+    <h2 className="text-[12px] md:text-[14px] font-black uppercase text-[#800000] tracking-wider mt-0.5">
+      POLYFABRICS
+    </h2>
+    
+    {/* LINE 3: LOCATION (Optional, but added for completeness) */}
+    <p className="text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] text-[#2d0a4e]/50 mt-1.5">
+      CHENNAI, TN, INDIA
+    </p>
+
+  </div>
+</div>
+
+    {/* Gold Divider Line (Matches your existing design) */}
+    <div className="mt-4 h-[1px] w-full bg-gradient-to-r from-[#C5A059] to-transparent opacity-50"></div>
+  </div>
+
+
+
+  {/* Navigation Items */}
+  <nav>
+    <ul className="space-y-1">
+      {menuItems.map((item) => (
+        <li key={item.name}>
+          <button
+            onClick={() => {
+              setActivePage(item.name);
+              setIsSidebarOpen(false);
+            }}
+            className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-xl text-[15px] font-medium transition-all duration-200 text-left
+              ${activePage === item.name 
+                ? 'bg-[#F2EFE9] text-[#8B4513] shadow-sm' 
+                : 'text-gray-500 hover:bg-gray-50 hover:text-[#C5A059]'}
+            `}
+          >
+            <span className={activePage === item.name ? 'text-[#8B4513]' : 'text-gray-400'}>
+              {item.icon}
+            </span>
+            {item.name}
+          </button>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</div>
 
         <div className="p-8 border-t border-gray-50 bg-gray-50/50">
           <p className="text-[11px] text-gray-400 font-medium italic">Chennai, Tamil Nadu</p>
