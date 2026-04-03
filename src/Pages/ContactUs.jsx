@@ -44,7 +44,7 @@ const ContactUs = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-xs uppercase tracking-[0.2em] mb-1 text-[#800000]">Headquarters</h4>
-                  <p className="text-[#2d0a4e] text-xl font-bold">Chennai, Tamil Nadu</p>
+                  <p className="text-[#2d0a4e] text-xl font-bold">Chennai, India</p>
                 </div>
               </div>
 
