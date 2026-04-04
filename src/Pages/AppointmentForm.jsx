@@ -29,10 +29,10 @@ const AppointmentForm = () => {
             <div className="flex items-center border-b-2 border-gray-200 focus-within:border-[#2d0a4e] transition-all">
               <Briefcase size={18} className="text-gray-400 mr-3" />
               <select className="w-full p-2 outline-none text-lg font-medium bg-transparent">
-                <option>Industrial Consultation</option>
-                <option>Custom Textile Fitting</option>
-                <option>Fabric Quality Inspection</option>
-                <option>Bulk Order Inquiry</option>
+                <option>Trade Enquiry</option>
+                <option>Bulk Order Enquiry</option>
+                <option>Business visit</option>
+            
               </select>
             </div>
           </div>

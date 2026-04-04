@@ -3,34 +3,8 @@ import { Mail, MapPin, GraduationCap, CheckCircle, Send, Share2, Target, FileTex
 
 const CareersPage = () => {
   const jobOpenings = [
-    {
-      type: "Management | Full Time",
-      title: "HR Manager",
-      location: "Bengaluru, Karnataka",
-      ctc: "Rs. 5.25 L.P.A.",
-      icon: <GraduationCap size={24} />,
-      criteria: [
-        "MBA (HR) or Graduate with 8+ years experience in Manufacturing/Corporate recruitment.",
-        "Proficiency in English, Hindi, and Regional languages.",
-        "Acquainted with official Tour & Travel within India."
-      ],
-      responsibilities: "End-to-End Recruitment, Payroll Management, Labour Law Compliance, and Campus Interviews.",
-      note: "Hiring process involves 3-round interviews till the right candidate is appointed."
-    },
-    {
-      type: "Social Media | Campaign",
-      title: "Social Media Influencer",
-      location: "Remote / Anywhere",
-      ctc: "Quotation Based",
-      icon: <Share2 size={24} />,
-      criteria: [
-        "Experienced Influencers for long-term Online Business Advertisements.",
-        "Target Sectors: Textile, Pulp & Paper, Healthcare, FMCG, and Tenders.",
-        "Platforms: LinkedIn, Facebook, Instagram, and YouTube."
-      ],
-      responsibilities: "Brand promotion of tangible and intangible products using our ready-made advertisements.",
-      note: "Submit Quotation in PDF format excluding 3rd Party & GST. Include terms & conditions."
-    }
+  
+ 
   ];
 
   return (
@@ -49,6 +23,7 @@ const CareersPage = () => {
 
         {/* --- JOB CARDS (Dono ka structure same hai) --- */}
         <div className="space-y-12">
+          <p>Currently No Opening</p>
           {jobOpenings.map((job, index) => (
             <div key={index} className="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-gray-100 flex flex-col md:flex-row min-h-[450px]">
               

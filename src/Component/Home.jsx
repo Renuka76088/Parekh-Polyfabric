@@ -134,7 +134,7 @@ const handleSend = () => {
     
     {/* LINE 3: LOCATION (Optional, but added for completeness) */}
     <p className="text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] text-[#2d0a4e]/50 mt-1.5">
-      CHENNAI, INDIA
+      CHENNAI, TN, INDIA
     </p>
 
   </div>
@@ -179,7 +179,7 @@ const handleSend = () => {
     
     {/* LINE 3: LOCATION (Optional, but added for completeness) */}
     <p className="text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] text-[#2d0a4e]/50 mt-1.5">
-      CHENNAI, INDIA
+      CHENNAI, TN, INDIA
     </p>
 
   </div>
@@ -219,7 +219,7 @@ const handleSend = () => {
 </div>
 
         <div className="p-8 border-t border-gray-50 bg-gray-50/50">
-          <p className="text-[11px] text-gray-400 font-medium italic">Chennai, India</p>
+          <p className="text-[11px] text-gray-400 font-medium italic">CHENNAI, TN, INDIA</p>
         </div>
       </aside>
 

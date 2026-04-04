@@ -3,20 +3,7 @@ import { Bell, FileText, Info, Calendar, ArrowRightCircle } from 'lucide-react';
 
 const CircularPage = () => {
   const announcements = [
-    {
-      ref: "PSPF/OPS/2026/089",
-      title: "Expansion of Export Logistics Hub",
-      date: "March 15, 2026",
-      priority: "High Priority",
-      content: "Management is pleased to announce the operational launch of our new Mumbai Port Logistics wing. This facility will streamline all international polyfabric shipments to Europe and UAE markets, ensuring 24-hour dispatch cycles. All regional heads are requested to coordinate with the Mumbai desk for pending export schedules."
-    },
-    {
-      ref: "PSPF/HR/2026/042",
-      title: "Revised Quality Audit Protocols",
-      date: "March 10, 2026",
-      priority: "Mandatory",
-      content: "As part of our commitment to 30 years of legacy, new ISO-certified yarn strength testing protocols are now active across all 28 states' manufacturing units. Compliance is mandatory for all unit managers. Weekly reports must be submitted to the HQ Quality Division without fail."
-    }
+
   ];
 
   return (
@@ -35,7 +22,7 @@ const CircularPage = () => {
             <span className="text-[#f1c40f] font-black uppercase tracking-[0.3em] text-sm">Official Communication</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none">
-            Management <br /> <span className="text-gray-300 italic">Circulars & Notices</span>
+         <span className="text-gray-300 italic">Circulars & Notices</span>
           </h1>
           <p className="text-white/60 text-xl mt-6 max-w-2xl font-light">
             Latest internal updates, compliance protocols, and strategic announcements from Parekh Southern Polyfabric Headquarters.
@@ -45,6 +32,9 @@ const CircularPage = () => {
 
       {/* --- NOTICES LIST --- */}
       <section className="max-w-6xl mx-auto py-20 px-6">
+         <p className="text-black text-xl mt-6 max-w-2xl font-light">
+          Currently No Circular Published
+          </p>
         <div className="space-y-12">
           {announcements.map((item, index) => (
             <div key={index} className="group bg-white border-l-8 border-[#800000] shadow-xl rounded-r-3xl overflow-hidden hover:shadow-2xl transition-all duration-300">

@@ -43,8 +43,8 @@ const BlogPage = () => {
             <BookOpen size={14} /> Official Journal
           </div>
           <h1 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none mb-6">
-            Threads of <br />
-            <span style={{color:'white'}}>Innovation</span>
+           
+            <span style={{color:'white'}}>Articles</span>
           </h1>
           <p className="text-white/70 text-xl md:text-2xl max-w-2xl font-light leading-relaxed">
             Expert insights on high-performance textiles, global logistics, and the industrial legacy of HC Parekh & Associates.
