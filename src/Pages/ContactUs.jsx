@@ -52,21 +52,12 @@ const ContactUs = () => {
                 <div className="w-14 h-14 rounded-2xl bg-[#2d0a4e] flex items-center justify-center shrink-0 text-white group-hover:bg-[#800000] transition-colors shadow-lg">
                   <Phone size={26} />
                 </div>
-                <div>
-                  <h4 className="font-bold text-xs uppercase tracking-[0.2em] mb-1 text-[#800000]">Direct Line</h4>
-                  <p className="text-[#2d0a4e] text-xl font-bold">+91 1111 1111</p>
-                </div>
+               <h4 className="text-[#2d0a4e] text-xl font-medium leading-none tracking-normal font-sans">
+  6353778329
+</h4>
               </div>
 
-              <div className="flex gap-6 items-center group bg-white p-6 rounded-3xl shadow-sm border border-[#2d0a4e]/5 hover:border-[#800000] hover:shadow-xl hover:shadow-[#800000]/5 transition-all duration-500">
-                <div className="w-14 h-14 rounded-2xl bg-[#2d0a4e] flex items-center justify-center shrink-0 text-white group-hover:bg-[#800000] transition-colors shadow-lg">
-                  <Mail size={26} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xs uppercase tracking-[0.2em] mb-1 text-[#800000]">Inquiries</h4>
-                  <p className="text-[#2d0a4e] text-xl font-bold">info@parekhpolyfabrics.in</p>
-                </div>
-              </div>
+           
             </div>
 
             {/* SOCIALS */}

@@ -47,14 +47,15 @@ const BlogPage = () => {
             <span style={{color:'white'}}>Articles</span>
           </h1>
           <p className="text-white/70 text-xl md:text-2xl max-w-2xl font-light leading-relaxed">
-            Expert insights on high-performance textiles, global logistics, and the industrial legacy of HC Parekh & Associates.
+         “Join and participate in our nation-wise campaign to digitalize the Textile
+Sector, one of the largest sectors of India”
           </p>
         </div>
       </section>
 
       {/* --- BLOG GRID --- */}
-      <section className="max-w-7xl mx-auto py-24 px-6">
-        {/* Category Filter Bar */}
+      {/* <section className="max-w-7xl mx-auto py-24 px-6">
+       
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 border-b-2 border-gray-100 pb-8">
           <div>
             <h2 className="text-3xl font-black text-[#2d0a4e] uppercase tracking-tight">Featured Insights</h2>
@@ -70,7 +71,7 @@ const BlogPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {blogs.map((post) => (
             <article key={post.id} className="group bg-white flex flex-col h-full border-b-4 border-transparent hover:border-[#800000] transition-all duration-500 shadow-sm hover:shadow-2xl rounded-b-2xl overflow-hidden">
-              {/* Image Container */}
+            
               <div className="relative h-72 overflow-hidden">
                 <img 
                   src={post.img} 
@@ -82,7 +83,7 @@ const BlogPage = () => {
                 </div>
               </div>
 
-              {/* Text Content */}
+           
               <div className="p-8 flex-grow flex flex-col">
                 <div className="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">
                   <Calendar size={14} className="text-[#800000]" /> {post.date}
@@ -103,7 +104,7 @@ const BlogPage = () => {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
     
 

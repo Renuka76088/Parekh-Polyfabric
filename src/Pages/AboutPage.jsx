@@ -16,7 +16,10 @@ const AboutPage = () => {
                 Legacy of <span className="text-[#800000]">Southern</span><br />Polyfabrics
               </h2>
               <p className="text-gray-600 mb-6 text-base sm:text-lg">
-                We specialize in technical textiles that honor the vibrant culture of South India. Our poly-fabrics are woven with precision and colored with tradition.
+                Parekh Southern Polyfabrics is the Trusted Manufacturers & Supplier of the
+high standard quality of the southern Polyfabrics from lower range to higher
+range at reasonable and low price range with best and premium quality, with
+Quality Assurance and a Quality Seal.
               </p>
               <a href="#projects" className="text-[#800000] font-bold border-b-4 border-[#f1c40f] pb-1 hover:text-[#2d0a4e] transition inline-block w-fit mx-auto md:mx-0">
                 EXPLORE OUR GALLERY

@@ -1,61 +1,120 @@
-import React from 'react';
-import { Calendar, User, Briefcase, ChevronRight } from 'lucide-react';
+import React, { useRef, useState } from 'react';
+import { Upload, ChevronRight } from 'lucide-react';
 
 const AppointmentForm = () => {
+  const fileInputRef = useRef(null);
+  const [fileName, setFileName] = useState("");
+
+  const handleClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFileName(file.name);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#FDFDFD] flex items-center justify-center p-6">
-      <div className="bg-white p-10 rounded-2xl shadow-2xl w-full max-w-lg border-t-8 border-[#800000]">
+      <div className="bg-white p-10 rounded-2xl shadow-2xl w-full max-w-2xl border-t-8 border-[#800000]">
         
         {/* Header */}
         <h2 className="text-3xl font-black text-[#2d0a4e] mb-2 uppercase tracking-tighter">
           Book Appointment
         </h2>
-        <p className="text-gray-500 mb-8 font-medium italic">Parekh Polyfabric — Industrial Consultation</p>
+        <p className="text-gray-500 mb-8 font-medium italic">
+          Visitor Entry Form
+        </p>
         
         {/* Form */}
         <form className="space-y-6">
-          {/* Full Name */}
-          <div className="relative">
-            <label className="block text-[10px] font-black text-[#800000] uppercase tracking-widest mb-2">Full Name</label>
-            <div className="flex items-center border-b-2 border-gray-200 focus-within:border-[#2d0a4e] transition-all">
-              <User size={18} className="text-gray-400 mr-3" />
-              <input type="text" className="w-full p-2 outline-none text-lg font-medium" placeholder="Enter your full name" />
-            </div>
-          </div>
-          
-          {/* Service Type */}
-          <div className="relative">
-            <label className="block text-[10px] font-black text-[#800000] uppercase tracking-widest mb-2">Service Type</label>
-            <div className="flex items-center border-b-2 border-gray-200 focus-within:border-[#2d0a4e] transition-all">
-              <Briefcase size={18} className="text-gray-400 mr-3" />
-              <select className="w-full p-2 outline-none text-lg font-medium bg-transparent">
-                <option>Trade Enquiry</option>
-                <option>Bulk Order Enquiry</option>
-                <option>Business visit</option>
-            
-              </select>
+
+          {/* Inputs */}
+          <InputField label="Name of the Visitor" />
+          <InputField label="Name of the Business" />
+          <InputField label="Visitor Address with Pin code" />
+          <InputField label="Mobile No." type="tel" />
+          <InputField label="Email Id" type="email" />
+
+          {/* Upload Proof */}
+          <div className="space-y-3">
+            <label className="text-sm font-bold uppercase text-[#800000]">
+              Upload Residential / Business Proof
+            </label>
+
+            <div
+              onClick={handleClick}
+              className="border-2 border-dashed border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center cursor-pointer hover:border-[#8E735B] transition"
+            >
+              <Upload className="text-gray-400 mb-2" size={30} />
+
+              {fileName ? (
+                <span className="text-green-600 font-semibold">
+                  {fileName}
+                </span>
+              ) : (
+                <span className="text-gray-500">
+                  Click to upload file
+                </span>
+              )}
+
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                accept=".pdf,.jpg,.png"
+                className="hidden"
+              />
             </div>
           </div>
 
-          {/* Date */}
-          <div className="relative">
-            <label className="block text-[10px] font-black text-[#800000] uppercase tracking-widest mb-2">Preferred Date</label>
-            <div className="flex items-center border-b-2 border-gray-200 focus-within:border-[#2d0a4e] transition-all">
-              <Calendar size={18} className="text-gray-400 mr-3" />
-              <input type="date" className="w-full p-2 outline-none text-lg font-medium" />
-            </div>
+          {/* Dropdown */}
+          <div className="space-y-2">
+            <label className="text-sm font-bold uppercase text-[#800000]">
+              Select Document Type
+            </label>
+            <select className="w-full bg-[#FAF7F2] py-3 px-4 rounded-lg outline-none focus:ring-2 focus:ring-[#8E735B]">
+              <option>Aadhaar Card</option>
+              <option>ECI Card</option>
+              <option>DL</option>
+            </select>
           </div>
 
-          {/* Submit Button */}
-          <button className="w-full bg-[#2d0a4e] text-white py-5 rounded-xl font-black uppercase tracking-widest hover:bg-[#800000] transition-all shadow-xl hover:shadow-2xl mt-4 flex items-center justify-center gap-2">
+          {/* Reason */}
+          <div className="space-y-2">
+            <label className="text-sm font-bold uppercase text-[#800000]">
+              Describe the reason for Visit
+            </label>
+            <textarea
+              rows="4"
+              className="w-full bg-[#FAF7F2] py-3 px-4 rounded-lg outline-none focus:ring-2 focus:ring-[#8E735B]"
+              placeholder="Write your purpose of visit..."
+            ></textarea>
+          </div>
+
+          {/* Submit */}
+          <button className="w-full bg-[#2d0a4e] text-white py-4 rounded-xl font-black uppercase tracking-widest hover:bg-[#800000] transition-all flex items-center justify-center gap-2">
             Confirm Appointment <ChevronRight size={20} />
           </button>
         </form>
-
-    
       </div>
     </div>
   );
 };
+
+/* Input Component */
+const InputField = ({ label, type = "text" }) => (
+  <div className="space-y-2">
+    <label className="text-sm font-bold uppercase text-[#800000]">
+      {label}
+    </label>
+    <input
+      type={type}
+      className="w-full bg-[#FAF7F2] py-3 px-4 rounded-lg outline-none focus:ring-2 focus:ring-[#8E735B]"
+    />
+  </div>
+);
 
 export default AppointmentForm;
