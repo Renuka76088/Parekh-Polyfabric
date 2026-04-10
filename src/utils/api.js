@@ -30,4 +30,8 @@ export const appointmentApi = {
   }),
 };
 
+export const productApi = {
+  getAll: (siteId) => api.get(`/product?siteId=${siteId}`),
+};
+
 export default api;
