@@ -32,13 +32,13 @@ const QuotationForm = () => {
       // Quotation usually doesn't have file upload in the controller extract logic, 
       // but let's check Quotation.js model... it has gstCertificate?
       // Wait, let me check Quotation.js model again.
-      
+
       // In Quotation.js: gstCertificate: { type: String }
       // But image doesn't show upload. I'll stick to image fields.
       // If backend needs it, I'll send null.
 
       const response = await quotationApi.submit(formData);
-      
+
       if (response.data.success) {
         setMessage({ type: 'success', text: 'Quotation request submitted successfully!' });
         setFormData({
@@ -66,14 +66,14 @@ const QuotationForm = () => {
   return (
     <div className="min-h-screen bg-[#F9F7F3] py-20 px-6">
       <div className="max-w-5xl mx-auto bg-white p-12 md:p-16 shadow-lg border border-gray-100 rounded-2xl">
-        
+
         {/* Header */}
         <div className="flex justify-between items-start mb-16 border-b border-gray-200 pb-10">
           <div>
-            <h1 className="text-5xl font-black tracking-tighter" style={{color:'#800000'}}>
-              e-Quotation (e-Form)
+            <h1 className="text-5xl font-black tracking-tighter" style={{ color: '#800000' }}>
+              e-Quotation
             </h1>
-            <p className="text-xl mt-4 font-medium" style={{color:'#2d0a4e'}}>
+            <p className="text-xl mt-4 font-medium" style={{ color: '#2d0a4e' }}>
               Request a Price Quote
             </p>
           </div>
@@ -91,54 +91,54 @@ const QuotationForm = () => {
 
           {/* Business Info */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <InputField 
-              label="Name of the Trader" 
-              name="traderName" 
-              value={formData.traderName} 
-              onChange={handleChange} 
-              required 
+            <InputField
+              label="Name of the Trader"
+              name="traderName"
+              value={formData.traderName}
+              onChange={handleChange}
+              required
             />
-            <InputField 
-              label="Business Name" 
-              name="businessName" 
-              value={formData.businessName} 
-              onChange={handleChange} 
-              required 
+            <InputField
+              label="Business Name"
+              name="businessName"
+              value={formData.businessName}
+              onChange={handleChange}
+              required
             />
-            <InputField 
-              label="Business Address with Pin Code" 
-              name="businessAddress" 
-              value={formData.businessAddress} 
-              onChange={handleChange} 
-              required 
+            <InputField
+              label="Business Address with Pin Code"
+              name="businessAddress"
+              value={formData.businessAddress}
+              onChange={handleChange}
+              required
             />
-            <InputField 
-              label="GST No." 
-              name="gstNo" 
-              value={formData.gstNo} 
-              onChange={handleChange} 
+            <InputField
+              label="GST No."
+              name="gstNo"
+              value={formData.gstNo}
+              onChange={handleChange}
             />
-            <InputField 
-              label="Mobile No." 
-              type="tel" 
-              name="mobileNo" 
-              value={formData.mobileNo} 
-              onChange={handleChange} 
-              required 
+            <InputField
+              label="Mobile No."
+              type="tel"
+              name="mobileNo"
+              value={formData.mobileNo}
+              onChange={handleChange}
+              required
             />
-            <InputField 
-              label="Email id" 
-              type="email" 
-              name="email" 
-              value={formData.email} 
-              onChange={handleChange} 
-              required 
+            <InputField
+              label="Email id"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
             />
           </div>
 
           {/* Options Dropdown */}
           <div>
-            <SelectField 
+            <SelectField
               label="Options"
               name="quotationType"
               value={formData.quotationType}
@@ -153,10 +153,10 @@ const QuotationForm = () => {
 
           {/* Product Details */}
           <div>
-            <label className="block text-lg font-bold uppercase mb-3" style={{color:'#800000'}}>
+            <label className="block text-lg font-bold uppercase mb-3" style={{ color: '#800000' }}>
               Particulars of the Products
             </label>
-            <textarea 
+            <textarea
               name="particulars"
               value={formData.particulars}
               onChange={handleChange}
@@ -169,19 +169,19 @@ const QuotationForm = () => {
 
           {/* Buttons */}
           <div className="flex gap-6 pt-6">
-            <button 
-              type="button" 
+            <button
+              type="button"
               onClick={() => {
                 setFormData({
-                    traderName: "",
-                    businessName: "",
-                    businessAddress: "",
-                    gstNo: "",
-                    mobileNo: "",
-                    email: "",
-                    quotationType: "",
-                    particulars: "",
-                    siteId: "ParekhPolyfabric01"
+                  traderName: "",
+                  businessName: "",
+                  businessAddress: "",
+                  gstNo: "",
+                  mobileNo: "",
+                  email: "",
+                  quotationType: "",
+                  particulars: "",
+                  siteId: "ParekhPolyfabric01"
                 });
                 setMessage({ type: '', text: '' });
               }}
@@ -190,8 +190,8 @@ const QuotationForm = () => {
               Reset
             </button>
 
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               disabled={loading}
               className="flex-1 bg-[#2d0a4e] py-5 text-lg font-black uppercase tracking-widest text-white rounded-lg flex items-center justify-center gap-3 disabled:opacity-70 transition-all"
             >
@@ -208,9 +208,9 @@ const QuotationForm = () => {
           </div>
 
           <div className="text-center pt-8 border-t border-gray-100">
-             <a href="mailto:trade-enquiry@parekhpolyfabrics.com" className="text-[#800000] font-bold hover:underline">
-               trade-enquiry@parekhpolyfabrics.com
-             </a>
+            <a href="mailto:trade-enquiry@parekhpolyfabrics.com" className="text-[#800000] font-bold hover:underline">
+              trade-enquiry@parekhpolyfabrics.com
+            </a>
           </div>
 
         </form>
@@ -222,11 +222,11 @@ const QuotationForm = () => {
 /* Reusable Input */
 const InputField = ({ label, type = "text", name, value, onChange, required }) => (
   <div className="space-y-2">
-    <label className="text-sm font-bold uppercase tracking-wide" style={{color:'#2d0a4e'}}>
+    <label className="text-sm font-bold uppercase tracking-wide" style={{ color: '#2d0a4e' }}>
       {label}
     </label>
-    <input 
-      type={type} 
+    <input
+      type={type}
       name={name}
       value={value}
       onChange={onChange}
@@ -239,10 +239,10 @@ const InputField = ({ label, type = "text", name, value, onChange, required }) =
 /* Reusable Select */
 const SelectField = ({ label, options, name, value, onChange, required }) => (
   <div className="space-y-2">
-    <label className="text-sm font-bold uppercase tracking-wide" style={{color:'#2d0a4e'}}>
+    <label className="text-sm font-bold uppercase tracking-wide" style={{ color: '#2d0a4e' }}>
       {label}
     </label>
-    <select 
+    <select
       name={name}
       value={value}
       onChange={onChange}

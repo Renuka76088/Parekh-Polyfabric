@@ -6,7 +6,7 @@ const AppointmentForm = () => {
   const fileInputRef = useRef(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
-  
+
   const [formData, setFormData] = useState({
     visitorName: "",
     businessName: "",
@@ -53,7 +53,7 @@ const AppointmentForm = () => {
       }
 
       const response = await appointmentApi.submit(data);
-      
+
       if (response.data.success) {
         setMessage({ type: 'success', text: 'Appointment booked successfully!' });
         setFormData({
@@ -82,10 +82,10 @@ const AppointmentForm = () => {
   return (
     <div className="min-h-screen bg-[#FDFDFD] flex items-center justify-center py-20 px-6">
       <div className="bg-white p-10 rounded-2xl shadow-2xl w-full max-w-2xl border-t-8 border-[#800000]">
-        
+
         {/* Header */}
         <h2 className="text-3xl font-black text-[#2d0a4e] mb-2 uppercase tracking-tighter">
-          Visit with Appointment (e-Form)
+          Visit with Appointment
         </h2>
         <p className="text-gray-500 mb-8 font-medium italic">
           Visitor Entry Form
@@ -96,47 +96,47 @@ const AppointmentForm = () => {
             {message.text}
           </div>
         )}
-        
+
         {/* Form */}
         <form className="space-y-6" onSubmit={handleSubmit}>
 
           {/* Inputs */}
-          <InputField 
-            label="Name of the Visitor" 
-            name="visitorName" 
-            value={formData.visitorName} 
-            onChange={handleChange} 
-            required 
+          <InputField
+            label="Name of the Visitor"
+            name="visitorName"
+            value={formData.visitorName}
+            onChange={handleChange}
+            required
           />
-          <InputField 
-            label="Name of the Business" 
-            name="businessName" 
-            value={formData.businessName} 
-            onChange={handleChange} 
-            required 
+          <InputField
+            label="Name of the Business"
+            name="businessName"
+            value={formData.businessName}
+            onChange={handleChange}
+            required
           />
-          <InputField 
-            label="Visitor Address with Pin code" 
-            name="visitorAddress" 
-            value={formData.visitorAddress} 
-            onChange={handleChange} 
-            required 
+          <InputField
+            label="Visitor Address with Pin code"
+            name="visitorAddress"
+            value={formData.visitorAddress}
+            onChange={handleChange}
+            required
           />
-          <InputField 
-            label="Mobile No." 
-            type="tel" 
-            name="mobileNo" 
-            value={formData.mobileNo} 
-            onChange={handleChange} 
-            required 
+          <InputField
+            label="Mobile No."
+            type="tel"
+            name="mobileNo"
+            value={formData.mobileNo}
+            onChange={handleChange}
+            required
           />
-          <InputField 
-            label="Email Id" 
-            type="email" 
-            name="email" 
-            value={formData.email} 
-            onChange={handleChange} 
-            required 
+          <InputField
+            label="Email Id"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
           />
 
           {/* Upload Proof */}
@@ -176,7 +176,7 @@ const AppointmentForm = () => {
             <label className="text-sm font-bold uppercase text-[#800000]">
               Select Document Type
             </label>
-            <select 
+            <select
               name="proofType"
               value={formData.proofType}
               onChange={handleChange}
@@ -206,26 +206,26 @@ const AppointmentForm = () => {
           </div>
 
           {/* Submit */}
-          <button 
+          <button
             type="submit"
             disabled={loading}
             className="w-full bg-[#2d0a4e] text-white py-4 rounded-xl font-black uppercase tracking-widest hover:bg-[#800000] transition-all flex items-center justify-center gap-2 disabled:opacity-70"
           >
             {loading ? (
-                <>
-                  <Loader2 className="animate-spin" /> Processing...
-                </>
-              ) : (
-                <>
-                  Confirm Appointment <ChevronRight size={20} />
-                </>
-              )}
+              <>
+                <Loader2 className="animate-spin" /> Processing...
+              </>
+            ) : (
+              <>
+                Confirm Appointment <ChevronRight size={20} />
+              </>
+            )}
           </button>
 
           <div className="text-center pt-6 border-t border-gray-100">
-             <a href="mailto:appointment@parekhpolyfabrics.com" className="text-[#800000] font-bold hover:underline">
-               appointment@parekhpolyfabrics.com
-             </a>
+            <a href="mailto:appointment@parekhpolyfabrics.com" className="text-[#800000] font-bold hover:underline">
+              appointment@parekhpolyfabrics.com
+            </a>
           </div>
 
         </form>

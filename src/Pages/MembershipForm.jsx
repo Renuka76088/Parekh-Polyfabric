@@ -6,7 +6,7 @@ const MembershipForm = () => {
   const fileInputRef = useRef(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
-  
+
   const [formData, setFormData] = useState({
     traderName: "",
     businessName: "",
@@ -53,7 +53,7 @@ const MembershipForm = () => {
       }
 
       const response = await tradeEnquiryApi.submit(data);
-      
+
       if (response.data.success) {
         setMessage({ type: 'success', text: 'Enquiry submitted successfully!' });
         setFormData({
@@ -82,13 +82,13 @@ const MembershipForm = () => {
   return (
     <div className="min-h-screen bg-[#F9F7F3] py-20 px-6">
       <div className="max-w-4xl mx-auto bg-white p-12 md:p-16 shadow-lg border border-gray-100 rounded-2xl">
-        
+
         {/* Header */}
         <div className="mb-16">
-          <h1 className="text-5xl font-black uppercase tracking-tighter" style={{color:'#800000'}}>
-            Trade Enquiry (e-Form)
+          <h1 className="text-5xl font-black uppercase tracking-tighter" style={{ color: '#800000' }}>
+            Trade Enquiry
           </h1>
-          <p className="text-xl mt-4 font-medium" style={{color:'#2d0a4e'}}>
+          <p className="text-xl mt-4 font-medium" style={{ color: '#2d0a4e' }}>
             Parekh Southern Polyfabrics Official Enquiry Portal
           </p>
         </div>
@@ -104,55 +104,55 @@ const MembershipForm = () => {
           {/* Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-            <InputField 
-              label="Name of the Trader" 
-              name="traderName" 
-              value={formData.traderName} 
-              onChange={handleChange} 
-              required 
+            <InputField
+              label="Name of the Trader"
+              name="traderName"
+              value={formData.traderName}
+              onChange={handleChange}
+              required
             />
-            <InputField 
-              label="Business Name" 
-              name="businessName" 
-              value={formData.businessName} 
-              onChange={handleChange} 
-              required 
-            />
-
-            <InputField 
-              label="Business Address with Pin Code" 
-              className="md:col-span-2" 
-              name="businessAddress" 
-              value={formData.businessAddress} 
-              onChange={handleChange} 
-              required 
+            <InputField
+              label="Business Name"
+              name="businessName"
+              value={formData.businessName}
+              onChange={handleChange}
+              required
             />
 
-            <InputField 
-              label="GST No." 
-              name="gstNo" 
-              value={formData.gstNo} 
-              onChange={handleChange} 
-            />
-            <InputField 
-              label="Mobile No." 
-              type="tel" 
-              name="mobileNo" 
-              value={formData.mobileNo} 
-              onChange={handleChange} 
-              required 
+            <InputField
+              label="Business Address with Pin Code"
+              className="md:col-span-2"
+              name="businessAddress"
+              value={formData.businessAddress}
+              onChange={handleChange}
+              required
             />
 
-            <InputField 
-              label="Email Id" 
-              type="email" 
-              name="email" 
-              value={formData.email} 
-              onChange={handleChange} 
-              required 
+            <InputField
+              label="GST No."
+              name="gstNo"
+              value={formData.gstNo}
+              onChange={handleChange}
+            />
+            <InputField
+              label="Mobile No."
+              type="tel"
+              name="mobileNo"
+              value={formData.mobileNo}
+              onChange={handleChange}
+              required
             />
 
-            <SelectField 
+            <InputField
+              label="Email Id"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+
+            <SelectField
               label="Options"
               name="enquiryType"
               value={formData.enquiryType}
@@ -171,7 +171,7 @@ const MembershipForm = () => {
 
           {/* GST Upload */}
           <div className="space-y-4">
-            <label className="block text-lg font-bold uppercase tracking-wide" style={{color:'#2d0a4e'}}>
+            <label className="block text-lg font-bold uppercase tracking-wide" style={{ color: '#2d0a4e' }}>
               Upload GST Certificate
             </label>
 
@@ -203,8 +203,8 @@ const MembershipForm = () => {
 
           {/* Submit Button */}
           <div className="pt-6">
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               disabled={loading}
               className="w-full bg-[#2d0a4e] py-5 text-lg font-bold uppercase text-white rounded-lg hover:bg-[#1f0736] flex items-center justify-center gap-3 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
             >
@@ -221,9 +221,9 @@ const MembershipForm = () => {
           </div>
 
           <div className="text-center pt-4 border-t border-gray-100">
-             <a href="mailto:trade-enquiry@parekhpolyfabrics.com" className="text-[#800000] font-bold hover:underline">
-               trade-enquiry@parekhpolyfabrics.com
-             </a>
+            <a href="mailto:trade-enquiry@parekhpolyfabrics.com" className="text-[#800000] font-bold hover:underline">
+              trade-enquiry@parekhpolyfabrics.com
+            </a>
           </div>
 
         </form>
@@ -255,7 +255,7 @@ const SelectField = ({ label, options, name, value, onChange, required }) => (
     <label className="block text-sm font-bold uppercase tracking-wide text-[#3C2A21]">
       {label}
     </label>
-    <select 
+    <select
       name={name}
       value={value}
       onChange={onChange}

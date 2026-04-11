@@ -13,7 +13,7 @@ export default function Loader() {
       <div className="absolute inset-0 opacity-[0.03] grayscale bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
 
       <div className="text-center relative z-10">
-        
+
         {/* 1. LOGO BOX (Clear & Sharp) */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
@@ -26,7 +26,7 @@ export default function Loader() {
 
         {/* 2. TEXT (Bold & Professional) */}
         <div className="space-y-1">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -35,8 +35,8 @@ export default function Loader() {
             <span className="text-[#2d0a4e]">PAREKH</span>{" "}
             <span className="text-[#800000]">SOUTHERN</span>
           </motion.h1>
-          
-          <motion.h2 
+
+          <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -48,7 +48,7 @@ export default function Loader() {
 
         {/* 3. LOADING BAR (Industrial Style) */}
         <div className="w-48 h-1 bg-gray-100 mx-auto mt-10 rounded-full overflow-hidden">
-          <motion.div 
+          <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: "0%" }}
             transition={{ duration: 1, ease: "easeInOut" }}
@@ -56,13 +56,13 @@ export default function Loader() {
           />
         </div>
 
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.5 }}
           transition={{ delay: 0.6 }}
           className="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-500 mt-6"
         >
-          Chennai • India
+          Chennai, TN, India
         </motion.p>
       </div>
     </motion.div>
