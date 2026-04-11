@@ -153,12 +153,7 @@ function HomePage() {
                     <p className="mt-3 sm:mt-4 text-gray-600 text-sm leading-relaxed line-clamp-2">
                       {prod.desc}
                     </p>
-                    <div className="mt-5 sm:mt-6 flex justify-between items-center border-t pt-4 border-gray-100">
-                      <span className="text-[#800000] font-black text-lg sm:text-xl">{prod.price}</span>
-                      <div className="flex items-center gap-1 text-[#f1c40f]">
-                        <span className="text-gray-800 font-bold">{prod.rating}</span> ★
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </SwiperSlide>
@@ -193,39 +188,81 @@ Quality Assurance and a Quality Seal.
         </section>
 
         {/* ==================== CONTACT US SECTION ==================== */}
-        <section className="bg-[#fffdf5] py-12 sm:py-16 md:py-20 text-center">
-          <div className="max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-0">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 text-[#2d0a4e]">
-              Contact <span className="text-[#800000]">Us</span>
-            </h2>
-            <p className="text-gray-700 mb-8 md:mb-10 max-w-2xl mx-auto text-base sm:text-lg">
-              Have questions or want to request a sample? Reach out to our team and we will get back to you promptly.
-            </p>
+<section className="bg-[#fffdf5] py-12 sm:py-16 md:py-24 text-center">
+  <div className="max-w-6xl mx-auto px-6 sm:px-10">
+    
+    {/* Header Section */}
+    <div className="mb-12 md:mb-16">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 text-[#2d0a4e]">
+        Contact <span className="text-[#800000]">Us</span>
+      </h2>
+      <p className="text-gray-700 max-w-2xl mx-auto text-base sm:text-lg">
+        Have questions or want to request a sample? Reach out to our team and we will get back to you promptly.
+      </p>
+    </div>
 
-            <div className="mb-10 md:mb-12 rounded-xl overflow-hidden shadow-2xl border-4 border-[#f1c40f]/30">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5000000000005!2d80.270718!3d13.082680!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526635c7c5e8a7%3A0x7a0d8a0b0a0b0a0b!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin" 
-                width="100%" 
-                height="400" 
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Southern Polyfabrics Location - Chennai"
-              ></iframe>
-            </div>
+    {/* Main Content: Map + Details */}
+    <div className="flex flex-col md:flex-row gap-8 lg:gap-12 items-stretch text-left">
+      
+      {/* Left Side: Map Section */}
+      <div className="md:w-1/2 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#f1c40f]/20 min-h-[400px]">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5000000000005!2d80.270718!3d13.082680!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526635c7c5e8a7%3A0x7a0d8a0b0a0b0a0b!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0, minHeight: "400px" }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Parekh Polyfabrics Location - Chennai"
+        ></iframe>
+      </div>
 
-            <form className="grid gap-5 sm:gap-6 md:grid-cols-2">
-              <input type="text" placeholder="Your Name" className="p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#800000] text-base" />
-              <input type="email" placeholder="Your Email" className="p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#800000] text-base" />
-              <input type="text" placeholder="Subject" className="p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#800000] text-base" />
-              <textarea placeholder="Message" rows="5" className="p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#800000] md:col-span-2 text-base"></textarea>
-              <button type="submit" className="bg-[#800000] text-white font-bold px-8 sm:px-10 py-3 sm:py-4 rounded-md shadow-xl hover:bg-[#a00000] transition-all md:col-span-2 text-base sm:text-lg">
-                Send Message
-              </button>
-            </form>
+      {/* Right Side: Information Cards */}
+      <div className="md:w-1/2 flex flex-col justify-between space-y-6">
+        
+        {/* Contact Info Card */}
+        <div className="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-[#800000] h-full flex flex-col justify-center">
+          
+          {/* Phone */}
+          <div className="mb-8">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-gray-400 font-bold mb-2">Phone</h4>
+            <p className="text-2xl font-bold text-[#2d0a4e]">6353778329</p>
           </div>
-        </section>
+
+          {/* Trade Enquiry */}
+          <div className="mb-8">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-gray-400 font-bold mb-2">Trade Enquiry</h4>
+            <a href="mailto:trade-enquiry@parekhpolyfabrics.com" className="text-lg font-medium text-gray-800 hover:text-[#800000] transition-colors">
+              trade-enquiry@parekhpolyfabrics.com
+            </a>
+          </div>
+
+          {/* Customer Care */}
+          <div className="mb-8">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-gray-400 font-bold mb-2">Customer Care</h4>
+            <a href="mailto:customer-care@parekhpolyfabrics.com" className="text-lg font-medium text-gray-800 hover:text-[#800000] transition-colors">
+              customer-care@parekhpolyfabrics.com
+            </a>
+          </div>
+
+          {/* Location Details */}
+          <div className="pt-6 border-t border-gray-100">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-gray-400 font-bold mb-2">Location</h4>
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 bg-[#f1c40f] rounded-full"></span>
+              <p className="text-lg font-bold text-[#2d0a4e] tracking-wide">
+                CHENNAI, TN, INDIA
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         {/* ==================== FOOTER ==================== */}
         <footer className="bg-[#2d0a4e] text-white py-10 sm:py-12 text-center border-t-8 border-[#f1c40f]">

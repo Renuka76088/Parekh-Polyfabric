@@ -54,7 +54,7 @@ Sector, one of the largest sectors of India”
       </section>
 
       {/* --- BLOG GRID --- */}
-      {/* <section className="max-w-7xl mx-auto py-24 px-6">
+      <section className="max-w-7xl mx-auto py-24 px-6">
        
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 border-b-2 border-gray-100 pb-8">
           <div>
@@ -104,7 +104,7 @@ Sector, one of the largest sectors of India”
             </article>
           ))}
         </div>
-      </section> */}
+      </section>
 
     
 
