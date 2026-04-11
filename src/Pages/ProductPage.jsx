@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
-import { ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Loader2, ShoppingBag, ArrowUpRight } from 'lucide-react';
 import { productApi } from '../utils/api';
 
 // Swiper Styles
@@ -28,16 +28,6 @@ const staticCategories = [
       { id: "I-03", name: "Tough Mesh Poly", img: "https://media.istockphoto.com/id/2214970642/photo/handwoven-fabric-patterns-and-handwoven-silk-patterns-of-thai-people-native-fabric-pattern.jpg?s=612x612&w=0&k=20&c=vDcqZB0h-kELLH24r7KIJLrG8gJAQYjds9KxFXyHXy8=" },
       { id: "I-04", name: "Cargo Industrial", img: "https://media.istockphoto.com/id/1147530393/photo/colorful-fabric-cuts-folded-one-on-one-woven-texture-background.jpg?s=612x612&w=0&k=20&c=gs92ut1_zC19tcLCtq3RqvuVDRSUq2PwMUPWXRJNKmg=" },
     ]
-  },
-  {
-    name: "Premium Satin & Crepe",
-    id: "CAT-03",
-    products: [
-      { id: "P-01", name: "Mustard Gold Satin", img: "https://media.istockphoto.com/id/1387553276/photo/cloth-background.jpg?s=612x612&w=0&k=20&c=GRwOxgtlsU5n2yDC6I2XH96rtZaZn7gMwVi--eaL5zU=" },
-      { id: "P-02", name: "Blush Pink Crepe", img: "https://media.istockphoto.com/id/2167265240/photo/red-and-white-colors-background-texture-of-textile.jpg?s=612x612&w=0&k=20&c=dlePgxY0opNMsIVSEDjGfSRAFbcEm4Z2Z7tP75RTvgQ=" },
-      { id: "P-03", name: "Emerald Poly-Satin", img: "https://media.istockphoto.com/id/2249574368/photo/closeup-view-of-stacked-saris-or-sarees-in-display-of-retail-shop-for-use-as-indian-textiles.jpg?s=612x612&w=0&k=20&c=1dn5kNjciyNqqDJwmZtgylcZo7aZBOWZDSkcvRjWlCY=" },
-      { id: "P-04", name: "Ivory Soft Satin", img: "https://media.istockphoto.com/id/1776560965/photo/fancy-indian-sarees-neatly-stacked-colorful-silk-saris-in-racks-in-a-textile-shop-incredible.jpg?s=612x612&w=0&k=20&c=AZbf08aYqPRcQt_W1Z_ik-lwZTG-STUBhq11QoeXaQM=" },
-    ]
   }
 ];
 
@@ -45,15 +35,15 @@ const ProductPage = () => {
   const swiperRefs = useRef([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const siteId = "ParekhSouthernPolyfabrics03";
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await productApi.getAll("ParekhSouthernPolyfabrics03");
-        if (response.data.success && response.data.data.length > 0) {
-          // Grouping products by category
+        const response = await productApi.getAll(siteId);
+        if (response.data && response.data.success && response.data.data.length > 0) {
           const grouped = response.data.data.reduce((acc, product) => {
-            const catName = product.category;
+            const catName = product.category || "General Catalogue";
             if (!acc[catName]) {
               acc[catName] = {
                 name: catName,
@@ -63,15 +53,14 @@ const ProductPage = () => {
             }
             acc[catName].products.push({
               id: product._id,
-              name: product.title,
-              img: `http://localhost:5000/${product.image}`
+              name: product.title || product.name,
+              img: product.imageUrl || (product.image ? `http://localhost:5000/${product.image}` : staticCategories[0].products[0].img)
             });
             return acc;
           }, {});
 
           setCategories(Object.values(grouped));
         } else {
-          // Fallback to static data
           setCategories(staticCategories);
         }
       } catch (error) {
@@ -87,50 +76,60 @@ const ProductPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-        <Loader2 className="animate-spin text-[#800000] mb-4" size={48} />
-        <p className="text-gray-500 font-bold animate-pulse">Loading Catalogue...</p>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white font-sans">
+        <Loader2 className="animate-spin text-[#800000] mb-8" size={64} />
+        <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.4em] animate-pulse">Establishing Secure Database Link...</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-white min-h-screen py-16 px-4 md:px-10 font-sans">
+    <div className="bg-[#FDFDFD] min-h-screen py-24 px-6 md:px-16 font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Branding Header */}
-        <header className="mb-12 border-l-4 border-[#800000] pl-6">
-          <h1 className="text-3xl font-bold text-gray-900 uppercase tracking-tight">
-            Parekh <span className="text-[#800000]">Catalogue</span>
-          </h1>
-          <p className="text-[#C5A059] font-semibold text-sm uppercase tracking-wide">
-            Inventory Solutions
-          </p>
+        <header className="mb-20 flex flex-col md:flex-row justify-between items-end gap-8">
+          <div className="border-l-8 border-[#2d0a4e] pl-8">
+            <span className="text-[11px] font-black text-[#800000] uppercase tracking-[0.5em] block mb-4 italic">Corporate Inventory</span>
+            <h1 className="text-4xl md:text-7xl font-black text-[#2d0a4e] uppercase tracking-tighter leading-none mb-2">
+              Parekh <span className="text-transparent" style={{ WebkitTextStroke: '1px #cbd5e1' }}>Catalogue</span>
+            </h1>
+            <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em]">
+              High-Precision Industrial Textile Solutions.
+            </p>
+          </div>
+          <div className="bg-[#2d0a4e] text-white px-8 py-4 rounded-3xl flex items-center gap-4 shadow-xl">
+            <ShoppingBag size={18} className="text-[#f1c40f]" />
+            <span className="text-[11px] font-black uppercase tracking-widest">{categories.reduce((acc, c) => acc + c.products.length, 0)} Active Patterns</span>
+          </div>
         </header>
 
         {/* Category Rows Mapping */}
         {categories.map((cat, index) => (
-          <div key={cat.id} className="relative group/container space-y-4 mb-16">
+          <div key={cat.id} className="relative group/container mb-24 last:mb-0">
             
             {/* Category Header */}
-            <div className="flex justify-between items-center border-b border-gray-100 pb-2 mx-2">
-              <h2 className="text-sm md:text-lg font-bold text-gray-800 uppercase tracking-widest">{cat.name}</h2>
-              <span className="text-[10px] text-gray-400 font-medium">{cat.id}</span>
+            <div className="flex justify-between items-center border-b border-slate-100 pb-6 mb-10">
+              <div className="flex items-center gap-6">
+                <span className="bg-[#800000] text-white w-10 h-10 rounded-full flex items-center justify-center text-[10px] font-black">{index + 1}</span>
+                <h2 className="text-xl md:text-3xl font-black text-[#2d0a4e] uppercase tracking-tighter">{cat.name}</h2>
+              </div>
+              <span className="text-[10px] text-slate-300 font-black uppercase tracking-widest">{cat.id} // SEC_{cat.name.slice(0,3).toUpperCase()}</span>
             </div>
 
-            {/* --- MOBILE VIEW: Ek ke niche ek (Vertical List) --- */}
-            <div className="md:hidden space-y-8 px-2">
+            {/* --- MOBILE VIEW --- */}
+            <div className="md:hidden grid grid-cols-1 gap-12">
               {cat.products.map((product) => (
-                <div key={product.id} className="flex flex-col space-y-3">
-                  <div className="w-full aspect-square bg-gray-50 overflow-hidden rounded-sm">
+                <div key={product.id} className="group/card">
+                  <div className="aspect-[4/5] bg-slate-50 overflow-hidden rounded-[2rem] shadow-sm mb-6">
                     <img 
                       src={product.img} 
                       alt={product.name} 
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="space-y-1">
-                    <p className="text-[10px] text-[#C5A059] font-bold uppercase tracking-widest">Series {product.id.slice(-4)}</p>
-                    <h3 className="text-sm font-bold text-gray-900 uppercase tracking-tight">
+                  <div className="px-4">
+                    <p className="text-[10px] text-[#800000] font-black uppercase tracking-[0.2em] mb-2 font-mono">ID_{product.id.slice(-6).toUpperCase()}</p>
+                    <h3 className="text-2xl font-black text-[#2d0a4e] uppercase tracking-tighter">
                       {product.name}
                     </h3>
                   </div>
@@ -143,16 +142,16 @@ const ProductPage = () => {
               {/* Custom Arrows */}
               <button 
                 onClick={() => swiperRefs.current[index]?.slidePrev()}
-                className="absolute left-[-20px] top-[40%] -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-white/40 backdrop-blur-md border border-white/50 flex items-center justify-center text-gray-800 shadow-xl hover:bg-white/70 transition-all opacity-0 group-hover/container:opacity-100"
+                className="absolute left-[-2rem] top-1/2 -translate-y-1/2 z-40 w-16 h-16 rounded-full bg-white border border-slate-100 flex items-center justify-center text-[#2d0a4e] shadow-2xl hover:bg-[#800000] hover:text-white transition-all transform hover:scale-110 opacity-0 group-hover/container:opacity-100"
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft size={24} strokeWidth={3} />
               </button>
 
               <button 
                 onClick={() => swiperRefs.current[index]?.slideNext()}
-                className="absolute right-[-20px] top-[40%] -translate-y-1/2 z-40 w-11 h-11 rounded-full bg-white/40 backdrop-blur-md border border-white/50 flex items-center justify-center text-gray-800 shadow-xl hover:bg-white/70 transition-all opacity-0 group-hover/container:opacity-100"
+                className="absolute right-[-2rem] top-1/2 -translate-y-1/2 z-40 w-16 h-16 rounded-full bg-white border border-slate-100 flex items-center justify-center text-[#2d0a4e] shadow-2xl hover:bg-[#800000] hover:text-white transition-all transform hover:scale-110 opacity-0 group-hover/container:opacity-100"
               >
-                <ChevronRight size={24} />
+                <ChevronRight size={24} strokeWidth={3} />
               </button>
 
               <Swiper
@@ -160,21 +159,31 @@ const ProductPage = () => {
                   swiperRefs.current[index] = swiper;
                 }}
                 modules={[Navigation, Autoplay]}
-                spaceBetween={20}
+                spaceBetween={30}
                 slidesPerView={4}
-                className="px-2"
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                className="!py-4"
               >
                 {cat.products.map((product) => (
                   <SwiperSlide key={product.id}>
-                    <div className="bg-white group/card">
-                      <div className="aspect-[4/5] overflow-hidden mb-3">
+                    <div className="group/card relative">
+                      <div className="aspect-[3/4] overflow-hidden rounded-[2.5rem] bg-slate-100 shadow-sm transition-all duration-700 group-hover/card:shadow-2xl group-hover/card:shadow-slate-200">
                         <img 
                           src={product.img} 
                           alt={product.name} 
-                          className="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover grayscale group-hover/card:grayscale-0 group-hover/card:scale-110 transition-all duration-1000"
+                          onError={(e) => { e.target.src = staticCategories[0].products[0].img }}
                         />
+                        <div className="absolute inset-x-0 bottom-0 p-8 translate-y-full group-hover/card:translate-y-0 transition-transform duration-500">
+                          <button className="w-full bg-[#800000] text-white py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest flex items-center justify-center gap-3">
+                            Enquire Now <ArrowUpRight size={16} />
+                          </button>
+                        </div>
                       </div>
-                      <h3 className="text-xs font-bold text-gray-800 uppercase truncate">{product.name}</h3>
+                      <div className="mt-8 px-4 opacity-70 group-hover/card:opacity-100 transition-opacity">
+                        <p className="text-[10px] text-[#800000] font-black uppercase tracking-[0.2em] mb-2">Pattern Reflex // {cat.id}</p>
+                        <h3 className="text-xl font-black text-[#2d0a4e] uppercase tracking-tighter leading-none">{product.name}</h3>
+                      </div>
                     </div>
                   </SwiperSlide>
                 ))}

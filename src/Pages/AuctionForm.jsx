@@ -62,7 +62,7 @@ const AuctionForm = () => {
           gstNo: "",
           mobileNo: "",
           email: "",
-          siteId: "ParekhPolyfabric01"
+          siteId: "ParekhSouthernPolyfabrics03"
         });
         setFile(null);
         setFileName("");

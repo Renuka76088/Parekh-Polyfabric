@@ -169,7 +169,7 @@ function HomePage() {
 
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-[#2d0a4e]">
-                Legacy of <span className="text-[#800000]">Southern</span><br />Polyfabrics
+                About <span className="text-[#800000]"> us</span><br />
               </h2>
               <p className="text-gray-600 mb-6 text-base sm:text-lg">
                 Parekh Southern Polyfabrics is the Trusted Manufacturers & Supplier of the
