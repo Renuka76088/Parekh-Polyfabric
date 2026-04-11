@@ -29,14 +29,6 @@ const QuotationForm = () => {
     setMessage({ type: '', text: '' });
 
     try {
-      // Quotation usually doesn't have file upload in the controller extract logic, 
-      // but let's check Quotation.js model... it has gstCertificate?
-      // Wait, let me check Quotation.js model again.
-
-      // In Quotation.js: gstCertificate: { type: String }
-      // But image doesn't show upload. I'll stick to image fields.
-      // If backend needs it, I'll send null.
-
       const response = await quotationApi.submit(formData);
 
       if (response.data.success) {
@@ -64,33 +56,33 @@ const QuotationForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F7F3] py-20 px-6">
-      <div className="max-w-5xl mx-auto bg-white p-12 md:p-16 shadow-lg border border-gray-100 rounded-2xl">
+    <div className="min-h-screen bg-[#F9F7F3] py-10 md:py-20 px-4 md:px-6">
+      <div className="max-w-5xl mx-auto bg-white p-6 md:p-16 shadow-lg border border-gray-100 rounded-2xl">
 
         {/* Header */}
-        <div className="flex justify-between items-start mb-16 border-b border-gray-200 pb-10">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-8 md:mb-16 border-b border-gray-200 pb-8 md:pb-10 gap-4">
           <div>
-            <h1 className="text-5xl font-black tracking-tighter" style={{ color: '#800000' }}>
+            <h1 className="text-3xl md:text-5xl font-black tracking-tighter" style={{ color: '#800000' }}>
               e-Quotation
             </h1>
-            <p className="text-xl mt-4 font-medium" style={{ color: '#2d0a4e' }}>
+            <p className="text-lg md:text-xl mt-2 md:mt-4 font-medium" style={{ color: '#2d0a4e' }}>
               Request a Price Quote
             </p>
           </div>
-          <FileText size={48} className="text-[#8E735B]" />
+          <FileText size={40} className="text-[#8E735B] hidden md:block" />
         </div>
 
         {message.text && (
-          <div className={`mb-8 p-4 rounded-lg text-center font-bold ${message.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+          <div className={`mb-8 p-4 rounded-lg text-center font-bold text-sm md:text-base ${message.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
             {message.text}
           </div>
         )}
 
         {/* FORM */}
-        <form className="space-y-10" onSubmit={handleSubmit}>
+        <form className="space-y-6 md:space-y-10" onSubmit={handleSubmit}>
 
-          {/* Business Info */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Business Info Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
             <InputField
               label="Name of the Trader"
               name="traderName"
@@ -153,7 +145,7 @@ const QuotationForm = () => {
 
           {/* Product Details */}
           <div>
-            <label className="block text-lg font-bold uppercase mb-3" style={{ color: '#800000' }}>
+            <label className="block text-base md:text-lg font-bold uppercase mb-3" style={{ color: '#800000' }}>
               Particulars of the Products
             </label>
             <textarea
@@ -162,13 +154,13 @@ const QuotationForm = () => {
               onChange={handleChange}
               required
               rows="4"
-              className="w-full bg-[#FAF7F2] py-4 px-5 text-lg rounded-lg focus:ring-2 focus:ring-[#8E735B] outline-none"
+              className="w-full bg-[#FAF7F2] py-4 px-5 text-base md:text-lg rounded-lg focus:ring-2 focus:ring-[#8E735B] outline-none"
               placeholder="Enter product details, GSM, quantity, color, specifications..."
             />
           </div>
 
-          {/* Buttons */}
-          <div className="flex gap-6 pt-6">
+          {/* Buttons - Stack on mobile, side-by-side on desktop */}
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 pt-4">
             <button
               type="button"
               onClick={() => {
@@ -181,11 +173,11 @@ const QuotationForm = () => {
                   email: "",
                   quotationType: "",
                   particulars: "",
-                  siteId: "ParekhPolyfabric01"
+                  siteId: "ParekhSouthernPolyfabrics03"
                 });
                 setMessage({ type: '', text: '' });
               }}
-              className="flex-1 border-2 border-[#2d0a4e] py-5 text-lg font-black uppercase tracking-widest text-[#2d0a4e] rounded-lg hover:bg-gray-100"
+              className="w-full md:flex-1 border-2 border-[#2d0a4e] py-4 md:py-5 text-base md:text-lg font-black uppercase tracking-widest text-[#2d0a4e] rounded-lg hover:bg-gray-100 transition-colors"
             >
               Reset
             </button>
@@ -193,7 +185,7 @@ const QuotationForm = () => {
             <button
               type="submit"
               disabled={loading}
-              className="flex-1 bg-[#2d0a4e] py-5 text-lg font-black uppercase tracking-widest text-white rounded-lg flex items-center justify-center gap-3 disabled:opacity-70 transition-all"
+              className="w-full md:flex-1 bg-[#2d0a4e] py-4 md:py-5 text-base md:text-lg font-black uppercase tracking-widest text-white rounded-lg flex items-center justify-center gap-3 disabled:opacity-70 transition-all active:scale-95"
             >
               {loading ? (
                 <>
@@ -208,7 +200,7 @@ const QuotationForm = () => {
           </div>
 
           <div className="text-center pt-8 border-t border-gray-100">
-            <a href="mailto:trade-enquiry@parekhpolyfabrics.com" className="text-[#800000] font-bold hover:underline">
+            <a href="mailto:trade-enquiry@parekhpolyfabrics.com" className="text-[#800000] text-sm md:text-base font-bold hover:underline break-all">
               trade-enquiry@parekhpolyfabrics.com
             </a>
           </div>
@@ -219,10 +211,10 @@ const QuotationForm = () => {
   );
 };
 
-/* Reusable Input */
+/* Reusable Input - Optimized Spacing */
 const InputField = ({ label, type = "text", name, value, onChange, required }) => (
-  <div className="space-y-2">
-    <label className="text-sm font-bold uppercase tracking-wide" style={{ color: '#2d0a4e' }}>
+  <div className="space-y-1 md:space-y-2">
+    <label className="text-xs md:text-sm font-bold uppercase tracking-wide" style={{ color: '#2d0a4e' }}>
       {label}
     </label>
     <input
@@ -231,15 +223,15 @@ const InputField = ({ label, type = "text", name, value, onChange, required }) =
       value={value}
       onChange={onChange}
       required={required}
-      className="w-full bg-[#FAF7F2] py-3 px-4 rounded-lg focus:ring-2 focus:ring-[#8E735B] outline-none"
+      className="w-full bg-[#FAF7F2] py-3 px-4 text-base rounded-lg focus:ring-2 focus:ring-[#8E735B] outline-none"
     />
   </div>
 );
 
-/* Reusable Select */
+/* Reusable Select - Optimized Spacing */
 const SelectField = ({ label, options, name, value, onChange, required }) => (
-  <div className="space-y-2">
-    <label className="text-sm font-bold uppercase tracking-wide" style={{ color: '#2d0a4e' }}>
+  <div className="space-y-1 md:space-y-2">
+    <label className="text-xs md:text-sm font-bold uppercase tracking-wide" style={{ color: '#2d0a4e' }}>
       {label}
     </label>
     <select
@@ -247,7 +239,7 @@ const SelectField = ({ label, options, name, value, onChange, required }) => (
       value={value}
       onChange={onChange}
       required={required}
-      className="w-full bg-[#FAF7F2] py-3 px-4 rounded-lg focus:ring-2 focus:ring-[#8E735B] outline-none"
+      className="w-full bg-[#FAF7F2] py-3 px-4 text-base rounded-lg focus:ring-2 focus:ring-[#8E735B] outline-none appearance-none"
     >
       <option value="">Select Option</option>
       {options.map(opt => (
