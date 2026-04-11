@@ -269,7 +269,9 @@ Quality Assurance and a Quality Seal.
           <div className="max-w-6xl mx-auto px-6">
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#f1c40f]">SOUTHERN POLYFABRICS</h3>
             <p className="opacity-70 mb-4 sm:mb-6 text-sm sm:text-base">Quality Textiles | Industrial Strength | Traditional Aesthetics</p>
-            <p className="text-sm sm:text-base">© {new Date().getFullYear()} Southern Polyfabrics. All rights reserved.</p>
+<div className="text-xs uppercase tracking-widest text-gray-400">
+  © 2026 | All Rights Reserved | Parekh Southern Polyfabrics
+</div>
           </div>
         </footer>
 
