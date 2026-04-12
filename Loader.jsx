@@ -19,9 +19,13 @@ export default function Loader() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-20 h-20 bg-[#2d0a4e] rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl"
+          className="w-20 h-20 mx-auto mb-6 flex items-center justify-center"
         >
-          <span className="text-4xl font-black text-white italic">P</span>
+          <img
+            src="/7.png"
+            alt="Logo"
+            className="w-full h-full object-contain"
+          />
         </motion.div>
 
         {/* 2. TEXT (Bold & Professional) */}
