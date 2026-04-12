@@ -58,22 +58,31 @@ const Home = () => {
 
       {/* MOBILE HEADER (Always Visible on Mobile) */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-white border-b z-[60] p-4 flex justify-between items-center px-6">
-        <div className="flex items-center gap-3 py-2">
-          <div className="w-10 h-10 bg-[#2d0a4e] rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
-            <span className="text-xl font-black text-white italic">P</span>
-          </div>
+        <div className="flex items-center gap-2 py-2">
+
+          {/* 🔥 Logo Image (no bg) */}
+          <img
+            src="/7.png"
+            alt="Logo"
+            className="w-12 h-12 object-contain flex-shrink-0"
+          />
+
+          {/* Text */}
           <div className="flex flex-col justify-center leading-none">
             <h1 className="text-[14px] md:text-[16px] font-black uppercase tracking-tight flex items-center gap-1.5">
               <span className="text-[#2d0a4e]">PAREKH</span>
               <span className="text-[#800000]">SOUTHERN</span>
             </h1>
+
             <h2 className="text-[12px] md:text-[14px] font-black uppercase text-[#800000] tracking-wider mt-0.5">
               POLYFABRICS
             </h2>
+
             <p className="text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] text-[#2d0a4e]/50 mt-1.5">
               CHENNAI, TN, INDIA
             </p>
           </div>
+
         </div>
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -89,24 +98,33 @@ const Home = () => {
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
         md:translate-x-0 overflow-y-auto scrollbar-thin
       `}>
-        <div className="p-8">
+        <div className="p-8 -mt-14 md:mt-0">
           <div className="mb-10 pt-4 md:pt-0">
-            <div className="flex items-center gap-3 py-2">
-              <div className="w-10 h-10 bg-[#2d0a4e] rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
-                <span className="text-xl font-black text-white italic">P</span>
-              </div>
+            <div className="flex items-center gap-2 py-2">
+
+              {/* 🔥 Logo Image (No BG) */}
+              <img
+                src="/7.png"
+                alt="Logo"
+                className="w-14 h-14 object-contain flex-shrink-0"
+              />
+
+              {/* 🔥 Text */}
               <div className="flex flex-col justify-center leading-none">
-                <h1 className="text-[14px] md:text-[16px] font-black uppercase tracking-tight flex items-center gap-1.5">
+                <h1 className="text-[14px] md:text-[16px] font-black uppercase tracking-tight flex items-center gap-1">
                   <span className="text-[#2d0a4e]">PAREKH</span>
                   <span className="text-[#800000]">SOUTHERN</span>
                 </h1>
+
                 <h2 className="text-[12px] md:text-[14px] font-black uppercase text-[#800000] tracking-wider mt-0.5">
                   POLYFABRICS
                 </h2>
-                <p className="text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] text-[#2d0a4e]/50 mt-1.5">
+
+                <p className="text-[8px] md:text-[9px] font-bold uppercase tracking-[0.2em] text-[#2d0a4e]/50 mt-1">
                   CHENNAI, TN, INDIA
                 </p>
               </div>
+
             </div>
             <div className="mt-4 h-[1px] w-full bg-gradient-to-r from-[#C5A059] to-transparent opacity-50"></div>
           </div>
