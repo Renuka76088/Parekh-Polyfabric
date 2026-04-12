@@ -177,7 +177,7 @@ function HomePage() {
                 range at reasonable and low price range with best and premium quality, with
                 Quality Assurance and a Quality Seal.
               </p>
-              <a href="#projects" className="text-[#800000] font-bold border-b-4 border-[#f1c40f] pb-1 hover:text-[#2d0a4e] transition inline-block w-fit mx-auto md:mx-0">
+              <a href="/media-gallery" className="text-[#800000] font-bold border-b-4 border-[#f1c40f] pb-1 hover:text-[#2d0a4e] transition inline-block w-fit mx-auto md:mx-0">
                 EXPLORE OUR GALLERY
               </a>
             </div>

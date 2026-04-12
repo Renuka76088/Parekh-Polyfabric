@@ -5,23 +5,23 @@ import { FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/logo.png"
 
 const menuItems = [
-  { name: 'Home', path: '/', icon: <Globe size={20}/> },
-  { name: 'About Us', path: '/about-us', icon: <Users size={20}/> },
-  { name: 'Contact Us', path: '/contact-us', icon: <Phone size={20}/> },
-  { name: 'Product Page', path: '/product-page', icon: <Briefcase size={20}/> },
-  { name: 'Product Photo Gallery', path: '/product-photo-gallery', icon: <ImageIcon size={20}/> },
-  { name: 'Our Management', path: '/our-management', icon: <Users size={20}/> },
-  { name: 'Trade Enquiry', path: '/trade-enquiry', icon: <MessageSquare size={20}/> },
-  { name: 'e-Quotation', path: '/e-quotation', icon: <FileText size={20}/> },
-  { name: 'e-Auction', path: '/e-auction', icon: <FileText size={20}/> },
-  { name: 'Tender & Contract', path: '/tender-contract', icon: <FileText size={20}/> },
-  { name: 'Career Page', path: '/career-page', icon: <Briefcase size={20}/> },
-  { name: 'Circular', path: '/circular', icon: <FileText size={20}/> },
-  { name: 'Blog', path: '/blog', icon: <MessageSquare size={20}/> },
-  { name: 'Customer Review', path: '/customer-review', icon: <Star size={20}/> },
-  { name: 'Visit with Appointment', path: '/visit-appointment', icon: <MessageCircle size={20}/> },
-  { name: 'Media Gallery', path: '/media-gallery', icon: <ImageIcon size={20}/> },
-  { name: 'Our Textile Associates', path: '/textile-associates', icon: <MapPin size={20}/> },
+  { name: 'Home', path: '/', icon: <Globe size={20} /> },
+  { name: 'About Us', path: '/about-us', icon: <Users size={20} /> },
+  { name: 'Contact Us', path: '/contact-us', icon: <Phone size={20} /> },
+  { name: 'Product Page', path: '/product-page', icon: <Briefcase size={20} /> },
+  { name: 'Media Gallery', path: '/product-photo-gallery', icon: <ImageIcon size={20} /> },
+  { name: 'Our Management', path: '/our-management', icon: <Users size={20} /> },
+  { name: 'Trade Enquiry', path: '/trade-enquiry', icon: <MessageSquare size={20} /> },
+  { name: 'e-Quotation', path: '/e-quotation', icon: <FileText size={20} /> },
+  { name: 'e-Auction', path: '/e-auction', icon: <FileText size={20} /> },
+  { name: 'Tender & Contract', path: '/tender-contract', icon: <FileText size={20} /> },
+  { name: 'Career Page', path: '/career-page', icon: <Briefcase size={20} /> },
+  { name: 'Circular', path: '/circular', icon: <FileText size={20} /> },
+  { name: 'Blog', path: '/blog', icon: <MessageSquare size={20} /> },
+  { name: 'Customer Review', path: '/customer-review', icon: <Star size={20} /> },
+  { name: 'Visit with Appointment', path: '/visit-appointment', icon: <MessageCircle size={20} /> },
+  // { name: 'Media Gallery', path: '/media-gallery', icon: <ImageIcon size={20} /> },
+  { name: 'Our Textile Associates', path: '/textile-associates', icon: <MapPin size={20} /> },
 ];
 
 const Home = () => {
@@ -55,7 +55,7 @@ const Home = () => {
 
   return (
     <div className="flex min-h-screen bg-[#FDFBF7] font-sans selection:bg-[#C5A059] selection:text-white">
-      
+
       {/* MOBILE HEADER (Always Visible on Mobile) */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-white border-b z-[60] p-4 flex justify-between items-center px-6">
         <div className="flex items-center gap-3 py-2">
@@ -75,7 +75,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <button 
+        <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
         >
@@ -120,8 +120,8 @@ const Home = () => {
                     onClick={() => setIsSidebarOpen(false)}
                     className={({ isActive }) => `
                       w-full flex items-center gap-4 px-4 py-3.5 rounded-xl text-[15px] font-medium transition-all duration-200 text-left
-                      ${isActive 
-                        ? 'bg-[#F2EFE9] text-[#8B4513] shadow-sm' 
+                      ${isActive
+                        ? 'bg-[#F2EFE9] text-[#8B4513] shadow-sm'
                         : 'text-gray-500 hover:bg-gray-50 hover:text-[#C5A059]'}
                     `}
                   >
@@ -164,7 +164,7 @@ const Home = () => {
                     <p className="text-[10px] text-purple-200 mt-1">Online | Typically replies in 5m</p>
                   </div>
                 </div>
-                <button 
+                <button
                   onClick={() => setIsChatOpen(false)}
                   className="hover:bg-white/10 p-1 rounded-full transition-colors"
                 >
@@ -175,9 +175,8 @@ const Home = () => {
               <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-[#f8f9fa] custom-scrollbar">
                 {messages.map((msg, i) => (
                   <div key={i} className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
-                    <div className={`max-w-[80%] p-3 rounded-2xl text-sm shadow-sm ${
-                      msg.sender === "user" ? "bg-[#2d0a4e] text-white rounded-tr-none" : "bg-white text-gray-800 border border-gray-100 rounded-tl-none"
-                    }`}>
+                    <div className={`max-w-[80%] p-3 rounded-2xl text-sm shadow-sm ${msg.sender === "user" ? "bg-[#2d0a4e] text-white rounded-tr-none" : "bg-white text-gray-800 border border-gray-100 rounded-tl-none"
+                      }`}>
                       {msg.text}
                     </div>
                   </div>

@@ -55,7 +55,7 @@ const ManagementPage = () => {
         {/* Hero Image - Mobile Adjusted */}
         <div className="relative mt-12 md:mt-0 w-full md:w-[40%] h-[40vh] md:h-[65vh] bg-gray-200 rounded-t-[150px] md:rounded-[200px_200px_0_0] shadow-[15px_15px_0_#C5A059] md:shadow-[30px_30px_0_#C5A059] overflow-hidden border-4 md:border-8 border-white">
           <img
-            src="https://media.istockphoto.com/id/1181164878/photo/in-a-rotating-machinery-and-equipment-production-company.jpg?s=612x612&w=0&k=20&c=hQsRWHPA9IgOmOl49Bzumaa-N9VjRtHT5hyNmCh-LKI="
+            src="https://plus.unsplash.com/premium_photo-1661503093251-7c477d4a76fb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8b3VyJTIwbWFuYWdlbWVuZXR8ZW58MHx8MHx8fDA%3D"
             alt="Management"
             className="w-full h-full object-cover grayscale"
           />
