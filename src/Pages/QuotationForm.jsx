@@ -159,33 +159,12 @@ const QuotationForm = () => {
             />
           </div>
 
-          {/* Buttons - Stack on mobile, side-by-side on desktop */}
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6 pt-4">
-            <button
-              type="button"
-              onClick={() => {
-                setFormData({
-                  traderName: "",
-                  businessName: "",
-                  businessAddress: "",
-                  gstNo: "",
-                  mobileNo: "",
-                  email: "",
-                  quotationType: "",
-                  particulars: "",
-                  siteId: "ParekhSouthernPolyfabrics03"
-                });
-                setMessage({ type: '', text: '' });
-              }}
-              className="w-full md:flex-1 border-2 border-[#2d0a4e] py-4 md:py-5 text-base md:text-lg font-black uppercase tracking-widest text-[#2d0a4e] rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              Reset
-            </button>
-
+          {/* Submit Button */}
+          <div className="pt-4">
             <button
               type="submit"
               disabled={loading}
-              className="w-full md:flex-1 bg-[#2d0a4e] py-4 md:py-5 text-base md:text-lg font-black uppercase tracking-widest text-white rounded-lg flex items-center justify-center gap-3 disabled:opacity-70 transition-all active:scale-95"
+              className="w-full bg-[#2d0a4e] py-4 md:py-5 text-base md:text-lg font-black uppercase tracking-widest text-white rounded-lg flex items-center justify-center gap-3 disabled:opacity-70 transition-all active:scale-95 shadow-lg hover:bg-[#1a062e]"
             >
               {loading ? (
                 <>

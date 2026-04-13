@@ -35,7 +35,7 @@ const Home = () => {
 
       {/* MOBILE HEADER (Always Visible on Mobile) */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-white border-b z-[60] p-4 flex justify-between items-center px-6">
-        <div className="flex items-center gap-2 py-2">
+        <Link to="/" className="flex items-center gap-2 py-2 cursor-pointer hover:opacity-80 transition-opacity">
 
           {/* 🔥 Logo Image (no bg) */}
           <img
@@ -60,7 +60,7 @@ const Home = () => {
             </p>
           </div>
 
-        </div>
+        </Link>
         <button
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -77,7 +77,7 @@ const Home = () => {
       `}>
         <div className="p-8 -mt-14 md:mt-0">
           <div className="mb-10 pt-4 md:pt-0">
-            <div className="flex items-center gap-2 py-2">
+            <Link to="/" className="flex items-center gap-2 py-2 cursor-pointer hover:opacity-80 transition-opacity">
 
               {/* 🔥 Logo Image (No BG) */}
               <img
@@ -102,7 +102,7 @@ const Home = () => {
                 </p>
               </div>
 
-            </div>
+            </Link>
             <div className="mt-4 h-[1px] w-full bg-gradient-to-r from-[#C5A059] to-transparent opacity-50"></div>
           </div>
 
