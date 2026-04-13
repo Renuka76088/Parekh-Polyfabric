@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Camera, Loader2, Image as ImageIcon } from 'lucide-react';
-import { mediaApi } from '../utils/api';
+import { mediaApi, IMAGE_BASE_URL } from '../utils/api';
 
 const MediaGallery = () => {
   const [media, setMedia] = useState([]);
@@ -75,7 +75,7 @@ const MediaGallery = () => {
                 className="group relative overflow-hidden bg-white rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-700 cursor-pointer border border-slate-50"
               >
                 <img
-                  src={item.imageUrl || (item.image ? `http://localhost:5000/${item.image}` : staticMedia[idx % staticMedia.length].imageUrl)}
+                  src={item.imageUrl || (item.image ? `${IMAGE_BASE_URL}/${item.image}` : staticMedia[idx % staticMedia.length].imageUrl)}
                   alt={item.title}
                   className="w-full h-[30rem] object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                   onError={(e) => { e.target.src = staticMedia[idx % staticMedia.length].imageUrl }}

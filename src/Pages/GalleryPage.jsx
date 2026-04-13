@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Camera, Loader2, Image as ImageIcon } from 'lucide-react';
-import { mediaApi } from '../utils/api';
+import { mediaApi, IMAGE_BASE_URL } from '../utils/api';
 
 const GalleryPage = () => {
   const [media, setMedia] = useState([]);
@@ -66,7 +66,7 @@ const GalleryPage = () => {
               >
                 <div className="aspect-[3/4] overflow-hidden bg-gray-100 mb-4 rounded-3xl border border-slate-50 shadow-sm transition-all duration-500 group-hover:shadow-xl">
                   <img 
-                    src={item.imageUrl || (item.image ? `http://localhost:5000/${item.image}` : staticMedia[idx % staticMedia.length].imageUrl)} 
+                    src={item.imageUrl || (item.image ? `${IMAGE_BASE_URL}/${item.image}` : staticMedia[idx % staticMedia.length].imageUrl)} 
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />

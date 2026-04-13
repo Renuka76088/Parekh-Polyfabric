@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen, ArrowRight, Calendar, Tag, Loader2 } from 'lucide-react';
-import { blogApi } from '../utils/api';
+import { blogApi, IMAGE_BASE_URL } from '../utils/api';
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
@@ -114,7 +114,7 @@ const BlogPage = () => {
               <article key={post._id} className="group bg-white rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-700 overflow-hidden border border-slate-50 flex flex-col h-full">
                 <div className="h-72 overflow-hidden relative">
                   <img
-                    src={post.imageUrl || (post.thumbnail ? `http://localhost:5000/${post.thumbnail}` : staticBlogs[0].img)}
+                    src={post.imageUrl || (post.thumbnail ? `${IMAGE_BASE_URL}/${post.thumbnail}` : staticBlogs[0].img)}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                     alt={post.title}
                     onError={(e) => { e.target.src = staticBlogs[0].img }}
