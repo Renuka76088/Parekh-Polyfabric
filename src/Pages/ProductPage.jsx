@@ -136,7 +136,7 @@ const ProductPage = () => {
             <p className="text-xs tracking-[0.3em] text-[#800000] font-bold uppercase">
               Parekh Southern Polyfabrics
             </p>
-            <h1 className="text-3xl md:text-5xl font-black text-[#2d0a4e]">
+            <h1 className="text-2xl md:text-5xl font-black text-[#2d0a4e]">
               Catalogue
             </h1>
           </div>
@@ -150,7 +150,7 @@ const ProductPage = () => {
         </div>
 
         {/* FILTER */}
-        <div className="flex gap-2 mb-8 overflow-x-auto no-scrollbar">
+        <div className="flex gap-2 mb-8 overflow-x-auto no-scrollbar w-full max-w-full">
           {filters.map((f) => (
             <button
               key={f}

@@ -54,7 +54,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#FDFBF7] font-sans selection:bg-[#C5A059] selection:text-white">
+    <div className="flex min-h-screen bg-[#FDFBF7] font-sans selection:bg-[#C5A059] selection:text-white overflow-x-hidden">
 
       {/* MOBILE HEADER (Always Visible on Mobile) */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-white border-b z-[60] p-4 flex justify-between items-center px-6">
@@ -160,7 +160,7 @@ const Home = () => {
       </aside>
 
       {/* --- CONTENT AREA (Outlet for nested routes) --- */}
-      <main className="flex-1 md:ml-72 p-4 md:p-10 lg:p-14 min-h-screen relative pt-24 md:pt-10 bg-gray-50">
+      <main className="flex-1 md:ml-72 p-4 sm:p-6 md:p-10 lg:p-14 min-h-screen relative pt-24 md:pt-10 overflow-x-hidden bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <Outlet />
         </div>

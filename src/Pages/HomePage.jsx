@@ -78,7 +78,7 @@ function HomePage() {
       <div className="w-full max-w-[min(100vw,1280px)] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ==================== HERO SLIDER ==================== */}
-        <div className="relative h-[70vh] sm:h-[75vh] min-h-[450px] flex items-center justify-center text-center">
+        <div className="relative h-[60vh] sm:h-[75vh] min-h-[400px] flex items-center justify-center text-center">
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectFade]}
             effect="fade"
@@ -96,7 +96,7 @@ function HomePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-[#2d0a4e]/80 to-transparent" />
                   <div className="relative z-10 px-6 md:px-12 lg:px-20 text-white flex flex-col justify-center items-center text-center">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6 whitespace-pre-line text-[#f1c40f]">
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6 whitespace-pre-line text-[#f1c40f] break-words">
                       {slide.title}
                     </h1>
                     <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-10 max-w-xl lg:max-w-2xl opacity-90 leading-relaxed border-l-4 border-[#e91e63] pl-4">
@@ -113,9 +113,9 @@ function HomePage() {
         </div>
 
         {/* ==================== FEATURED PRODUCTS ==================== */}
-        <section id="featured" className="py-12 sm:py-16 md:py-20 px-0 max-w-6xl mx-auto text-center">
+        <section id="featured" className="py-12 sm:py-16 md:py-20 px-4 md:px-0 max-w-6xl mx-auto text-center">
           <div className="mb-10 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#2d0a4e] uppercase tracking-tighter">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#2d0a4e] uppercase tracking-tighter">
               Southern <span className="text-[#800000]">Polyfabrics</span>
             </h2>
             <div className="h-1.5 w-32 bg-[#f1c40f] mx-auto mt-4 rounded-full"></div>
@@ -168,7 +168,7 @@ function HomePage() {
               <span className="bg-[#f1c40f] text-[#2d0a4e] text-xs font-bold px-4 py-1 inline-block mb-6 w-fit rounded">
 
               </span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-[#2d0a4e]">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-[#2d0a4e]">
                 About <span className="text-[#800000]"> us</span><br />
               </h2>
               <p className="text-gray-600 mb-6 text-base sm:text-lg">
@@ -193,7 +193,7 @@ function HomePage() {
 
             {/* Header Section */}
             <div className="mb-10 md:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 md:mb-6 text-[#2d0a4e]">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 md:mb-6 text-[#2d0a4e]">
                 Contact <span className="text-[#800000]">Us</span>
               </h2>
               <p className="text-gray-700 max-w-2xl mx-auto text-base sm:text-lg px-2">
