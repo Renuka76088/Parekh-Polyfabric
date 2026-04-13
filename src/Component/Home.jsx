@@ -4,6 +4,8 @@ import { Menu, X, Globe, Users, Briefcase, ImageIcon, Send, MessageSquare, FileT
 import { FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/logo.png"
 
+import TextileChatbot from "./TextileChatbot";
+
 const menuItems = [
   { name: 'Home', path: '/', icon: <Globe size={20} /> },
   { name: 'About Us', path: '/about-us', icon: <Users size={20} /> },
@@ -27,31 +29,6 @@ const menuItems = [
 const Home = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
-
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    { sender: "bot", text: "Hello 👋 How can I help you?" }
-  ]);
-  const [input, setInput] = useState("");
-
-  const handleSend = () => {
-    if (!input.trim()) return;
-
-    const userMessage = { sender: "user", text: input };
-    let botReply = "Sorry, I didn't understand that.";
-
-    if (input.toLowerCase().includes("hello")) {
-      botReply = "Hi 👋 Welcome to Parekh Southern Polyfabrics!";
-    } else if (input.toLowerCase().includes("product")) {
-      botReply = "We deal in fabrics, silk and textile products.";
-    } else if (input.toLowerCase().includes("contact")) {
-      botReply = "You can contact us via phone or WhatsApp.";
-    }
-
-    const botMessage = { sender: "bot", text: botReply };
-    setMessages([...messages, userMessage, botMessage]);
-    setInput("");
-  };
 
   return (
     <div className="flex min-h-screen bg-[#FDFBF7] font-sans selection:bg-[#C5A059] selection:text-white overflow-x-hidden">
@@ -165,71 +142,8 @@ const Home = () => {
           <Outlet />
         </div>
 
-        {/* FLOATING ACTION BUTTONS */}
-        <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-[100] items-end">
-          {isChatOpen && (
-            <div className="mb-2 w-[350px] h-[500px] bg-white shadow-2xl rounded-2xl flex flex-col overflow-hidden border border-gray-100 animate-in slide-in-from-bottom-5 duration-300">
-              <div className="bg-[#2d0a4e] p-4 text-white flex justify-between items-center shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                      <MessageCircle size={20} />
-                    </div>
-                    <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#2d0a4e] rounded-full"></span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-sm leading-none">Support Team</h3>
-                    <p className="text-[10px] text-purple-200 mt-1">Online | Typically replies in 5m</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setIsChatOpen(false)}
-                  className="hover:bg-white/10 p-1 rounded-full transition-colors"
-                >
-                  <span className="text-xl">✕</span>
-                </button>
-              </div>
-
-              <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-[#f8f9fa] custom-scrollbar">
-                {messages.map((msg, i) => (
-                  <div key={i} className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
-                    <div className={`max-w-[80%] p-3 rounded-2xl text-sm shadow-sm ${msg.sender === "user" ? "bg-[#2d0a4e] text-white rounded-tr-none" : "bg-white text-gray-800 border border-gray-100 rounded-tl-none"
-                      }`}>
-                      {msg.text}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="p-3 bg-white border-t border-gray-100">
-                <div className="flex items-center bg-gray-100 rounded-full px-4 py-2 gap-2 focus-within:ring-2 ring-purple-200 transition-all">
-                  <input
-                    value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                    placeholder="Write a message..."
-                    className="flex-1 bg-transparent outline-none text-sm text-gray-700"
-                  />
-                  <button onClick={handleSend} className="text-[#2d0a4e] hover:scale-110 transition-transform disabled:opacity-50" disabled={!input.trim()}>
-                    <Send size={20} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-
-          <div className="flex flex-col gap-3">
-            <button
-              onClick={() => setIsChatOpen(!isChatOpen)}
-              className={`p-4 rounded-full text-white shadow-xl hover:scale-110 transition-all duration-300 ${isChatOpen ? 'bg-red-500 rotate-90' : 'bg-[#2d0a4e]'}`}
-            >
-              {isChatOpen ? <span className="text-xl">✕</span> : <MessageCircle size={28} />}
-            </button>
-            <a href="https://wa.me/919302057620" target="_blank" rel="noreferrer" className="bg-[#25D366] p-4 rounded-full text-white shadow-xl hover:scale-110 transition-all active:scale-95">
-              <FaWhatsapp className="w-7 h-7" />
-            </a>
-          </div>
-        </div>
+        {/* INTEGRATED TEXTILE CHATBOT */}
+        <TextileChatbot />
       </main>
 
       {isSidebarOpen && (
