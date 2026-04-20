@@ -70,7 +70,7 @@ const BlogPage = () => {
           </h1>
 
           <p className="text-white/70 text-base md:text-lg leading-relaxed font-bold uppercase tracking-widest max-w-2xl mx-auto mb-10 border-y border-white/10 py-6">
-            “Join and participate in our nation-wise campaign to digitalize the Textile
+            “Join and participate in our nation-wide campaign to digitalize the Textile
             Sector, one of the largest sectors of India”
           </p>
 

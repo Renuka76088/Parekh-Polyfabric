@@ -18,19 +18,11 @@ const TenderPage = () => {
             <p className="text-2xl font-medium text-gray-600 mt-4">Industrial Textile Manufacturing Sector</p>
           </div>
 
-          <div className="md:text-right flex flex-col items-start md:items-end">
-            <div className="bg-[#fffdf5] border-2 border-[#C5A059] p-6 rounded-xl">
-              <h2 className="text-2xl font-black text-[#2d0a4e] uppercase">HC Parekh & Associates</h2>
-              <p className="text-lg font-semibold text-[#800000]">Leading Textile Industrial Consultant</p>
-              <div className="flex items-center gap-2 mt-2 text-gray-500 font-bold">
-                <Award size={20} /> Since 2007
-              </div>
-            </div>
-          </div>
+         
         </div>
 
         {/* --- MAIN NOTICE BOX --- */}
-        <div className="bg-white border-2 border-gray-100 shadow-xl rounded-[2rem] overflow-hidden mb-16">
+        {/* <div className="bg-white border-2 border-gray-100 shadow-xl rounded-[2rem] overflow-hidden mb-16">
           <div className="bg-[#2d0a4e] p-10 text-white text-center">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">Expression of Interest (EOI)</h3>
 
@@ -43,18 +35,15 @@ const TenderPage = () => {
             <p>( At present, no EOI published)
             </p>
           </div>
-        </div>
+        </div> */}
 
 
 
         {/* --- CONTACT FOOTER --- */}
         <div className="bg-[#2d0a4e] p-12 md:p-20 rounded-[3rem] text-center text-white relative overflow-hidden">
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-6xl font-black uppercase mb-6 leading-none">Obtained Docuements In-Person</h2>
-            <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-              Tender documents are available for collection at our office.
-              Please bring your agency registration documents.
-            </p>
+            <h2 className="text-4xl font-black  mb-6 leading-none">( At Present, No e-Auction published)</h2>
+           
             <button className="bg-[#800000] text-white text-xl font-bold px-12 py-6 rounded-full hover:bg-white hover:text-[#2d0a4e] transition-all transform hover:scale-105 shadow-2xl">
               6353778329
             </button>
