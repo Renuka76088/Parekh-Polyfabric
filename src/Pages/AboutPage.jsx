@@ -17,7 +17,7 @@ const AboutPage = () => {
               <span className="text-[#800000]"> us</span><br />
             </h2>
             <p className="text-gray-600 mb-6 text-base sm:text-lg">
-              Parekh Southern Polyfabrics is the Trusted Manufacturers & Supplier of the
+              Parekh Southern Polyfabrics is the Trusted Manufacturer & Supplier of the
               high standard quality of the southern Polyfabrics from lower range to higher
               range at reasonable and low price range with best and premium quality, with
               Quality Assurance and a Quality Seal.
