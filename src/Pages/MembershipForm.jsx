@@ -80,29 +80,32 @@ const MembershipForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F7F3] py-20 px-6">
-      <div className="max-w-4xl mx-auto bg-white p-12 md:p-16 shadow-lg border border-gray-100 rounded-2xl">
+    // Responsive padding: py-10 for mobile, py-20 for desktop
+    <div className="min-h-screen bg-[#F9F7F3] py-10 md:py-20 px-4 md:px-6">
+      {/* Responsive card padding: p-6 for mobile, md:p-12/16 for desktop */}
+      <div className="max-w-4xl mx-auto bg-white p-6 md:p-12 lg:p-16 shadow-lg border border-gray-100 rounded-2xl">
 
         {/* Header */}
-        <div className="mb-16">
-          <h1 className="text-5xl font-black uppercase tracking-tighter" style={{ color: '#800000' }}>
+        <div className="mb-10 md:mb-16 text-center md:text-left">
+          {/* text-3xl for mobile, text-5xl for desktop */}
+          <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tighter" style={{ color: '#800000' }}>
             Trade Enquiry
           </h1>
-          <p className="text-xl mt-4 font-medium" style={{ color: '#2d0a4e' }}>
+          <p className="text-lg md:text-xl mt-4 font-medium" style={{ color: '#2d0a4e' }}>
             Parekh Southern Polyfabrics Official Enquiry Portal
           </p>
         </div>
 
         {message.text && (
-          <div className={`mb-8 p-4 rounded-lg text-center font-bold ${message.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+          <div className={`mb-8 p-4 rounded-lg text-center font-bold text-sm md:text-base ${message.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
             {message.text}
           </div>
         )}
 
-        <form className="space-y-10" onSubmit={handleSubmit}>
+        <form className="space-y-8 md:space-y-10" onSubmit={handleSubmit}>
 
           {/* Fields */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
 
             <InputField
               label="Name of the Trader"
@@ -171,22 +174,22 @@ const MembershipForm = () => {
 
           {/* GST Upload */}
           <div className="space-y-4">
-            <label className="block text-lg font-bold uppercase tracking-wide" style={{ color: '#2d0a4e' }}>
+            <label className="block text-base md:text-lg font-bold uppercase tracking-wide" style={{ color: '#2d0a4e' }}>
               Upload GST Certificate
             </label>
 
             <div
               onClick={handleClick}
-              className="border-4 border-dashed border-gray-300 rounded-2xl p-12 flex flex-col items-center justify-center cursor-pointer hover:border-[#8E735B] transition-colors"
+              className="border-4 border-dashed border-gray-300 rounded-2xl p-8 md:p-12 flex flex-col items-center justify-center cursor-pointer hover:border-[#8E735B] transition-colors"
             >
-              <Upload size={48} className="text-gray-400 mb-4" />
+              <Upload size={40} className="text-gray-400 mb-4 md:size-12" />
 
               {fileName ? (
-                <span className="text-green-600 font-semibold text-center">
+                <span className="text-green-600 font-semibold text-center break-all">
                   {fileName}
                 </span>
               ) : (
-                <span className="text-lg font-semibold text-gray-600">
+                <span className="text-base md:text-lg font-semibold text-gray-600 text-center">
                   Click here to upload GST Certificate
                 </span>
               )}
@@ -202,11 +205,11 @@ const MembershipForm = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="pt-6">
+          <div className="pt-4 md:pt-6">
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#2d0a4e] py-5 text-lg font-bold uppercase text-white rounded-lg hover:bg-[#1f0736] flex items-center justify-center gap-3 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full bg-[#2d0a4e] py-4 md:py-5 text-base md:text-lg font-bold uppercase text-white rounded-lg hover:bg-[#1f0736] flex items-center justify-center gap-3 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
@@ -221,7 +224,7 @@ const MembershipForm = () => {
           </div>
 
           <div className="text-center pt-4 border-t border-gray-100">
-            <a href="mailto:trade-enquiry@parekhpolyfabrics.com" className="text-[#800000] font-bold hover:underline">
+            <a href="mailto:trade-enquiry@parekhpolyfabrics.com" className="text-[#800000] font-bold hover:underline text-sm md:text-base break-all">
               trade-enquiry@parekhpolyfabrics.com
             </a>
           </div>
@@ -234,8 +237,8 @@ const MembershipForm = () => {
 
 /* Input Field */
 const InputField = ({ label, type = "text", className = "", name, value, onChange, required }) => (
-  <div className={`space-y-3 ${className}`}>
-    <label className="block text-sm font-bold uppercase tracking-wide text-[#3C2A21]">
+  <div className={`space-y-2 md:space-y-3 ${className}`}>
+    <label className="block text-xs md:text-sm font-bold uppercase tracking-wide text-[#3C2A21]">
       {label}
     </label>
     <input
@@ -244,15 +247,15 @@ const InputField = ({ label, type = "text", className = "", name, value, onChang
       value={value}
       onChange={onChange}
       required={required}
-      className="w-full bg-[#FAF7F2] py-4 px-5 text-base rounded-lg focus:ring-2 focus:ring-[#8E735B] outline-none"
+      className="w-full bg-[#FAF7F2] py-3 md:py-4 px-4 md:px-5 text-sm md:text-base rounded-lg focus:ring-2 focus:ring-[#8E735B] outline-none"
     />
   </div>
 );
 
 /* Select Field */
 const SelectField = ({ label, options, name, value, onChange, required }) => (
-  <div className="space-y-3">
-    <label className="block text-sm font-bold uppercase tracking-wide text-[#3C2A21]">
+  <div className="space-y-2 md:space-y-3">
+    <label className="block text-xs md:text-sm font-bold uppercase tracking-wide text-[#3C2A21]">
       {label}
     </label>
     <select
@@ -260,7 +263,7 @@ const SelectField = ({ label, options, name, value, onChange, required }) => (
       value={value}
       onChange={onChange}
       required={required}
-      className="w-full bg-[#FAF7F2] py-4 px-5 text-base rounded-lg focus:ring-2 focus:ring-[#8E735B] outline-none"
+      className="w-full bg-[#FAF7F2] py-3 md:py-4 px-4 md:px-5 text-sm md:text-base rounded-lg focus:ring-2 focus:ring-[#8E735B] outline-none"
     >
       {options.map((opt, i) => (
         <option key={i} value={opt === "Select Option" ? "" : opt}>{opt}</option>

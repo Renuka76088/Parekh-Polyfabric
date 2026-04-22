@@ -80,11 +80,7 @@ const ProductPage = () => {
                 .map((p) => ({
                   id: p._id,
                   name: p.title || p.name,
-                  img:
-                    p.imageUrl ||
-                    (p.image
-                      ? `${IMAGE_BASE_URL}/${p.image}`
-                      : "https://via.placeholder.com/300"),
+                  img: p.imageUrl || (p.image ? (p.image.startsWith("http") ? p.image : `${IMAGE_BASE_URL}/${p.image}`) : "https://via.placeholder.com/300"),
                 })),
             }))
             .filter((c) => c.products.length > 0);
