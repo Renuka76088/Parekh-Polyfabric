@@ -13,7 +13,7 @@ const TenderPage = () => {
               Official Invitation
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-[#2d0a4e] uppercase tracking-tighter mt-4 leading-[0.9] md:leading-[0.9]">
-              PAREKH <br /> <span className="text-[#800000]">SOUTHERN POLYFABRIC</span>
+              PAREKH <br /> <span className="text-[#800000]">SOUTHERN POLYFABRICS</span>
             </h1>
             <p className="text-lg md:text-2xl font-medium text-gray-600 mt-4 leading-tight">
               Industrial Textile Manufacturing Sector
