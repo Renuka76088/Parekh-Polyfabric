@@ -28,11 +28,11 @@ const ReviewPage = () => {
 
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-[#1a1a1a] font-sans antialiased">
-      
+
       {/* 1. BRANDED BANNER */}
       <section className="relative h-[30vh] w-full flex items-center bg-[#2d0a4e] overflow-hidden">
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(45deg, #800000 25%, transparent 25%, transparent 50%, #800000 50%, #800000 75%, transparent 75%, transparent)', backgroundSize: '60px 60px' }}></div>
-        
+
         <div className="relative z-10 px-8 md:px-20 flex justify-between items-end w-full pb-8">
           <div>
             <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-none">
@@ -41,8 +41,8 @@ const ReviewPage = () => {
             <p className="text-[#f1c40f] text-xs uppercase tracking-[0.4em] mt-4 font-bold">Trusted Industry Excellence since 2007</p>
           </div>
           <div className="hidden md:block text-right">
-             <p className="text-white text-5xl font-black leading-none">4.9</p>
-             <p className="text-[10px] text-gray-400 uppercase tracking-widest mt-2 font-bold">Global Satisfaction Rating</p>
+            <p className="text-white text-5xl font-black leading-none">4.9</p>
+            <p className="text-[10px] text-gray-400 uppercase tracking-widest mt-2 font-bold">Global Satisfaction Rating</p>
           </div>
         </div>
       </section>
@@ -87,10 +87,10 @@ const ReviewPage = () => {
             <h2 className="text-3xl font-black uppercase tracking-tighter">Your trust drives our innovation.</h2>
             <p className="text-gray-300 text-sm mt-2 font-medium">Join our network of 500+ global industrial partners.</p>
           </div>
-          
-          <button className="bg-[#800000] text-white px-8 py-4 text-xs font-black uppercase tracking-widest flex items-center gap-3 hover:bg-white hover:text-[#2d0a4e] transition-all">
+
+          {/* <button className="bg-[#800000] text-white px-8 py-4 text-xs font-black uppercase tracking-widest flex items-center gap-3 hover:bg-white hover:text-[#2d0a4e] transition-all">
             Write a Review <ChevronRight size={16} />
-          </button>
+          </button> */}
         </div>
       </section>
 
