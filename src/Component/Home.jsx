@@ -34,7 +34,7 @@ const Home = () => {
     <div className="flex min-h-screen bg-[#FDFBF7] font-sans selection:bg-[#C5A059] selection:text-white overflow-x-hidden">
 
       {/* MOBILE HEADER (Always Visible on Mobile) */}
-      <div className="md:hidden fixed top-0 left-0 right-0 bg-white border-b z-[60] p-4 flex justify-between items-center px-6">
+      <div className="lg:hidden fixed top-0 left-0 right-0 bg-white border-b z-[60] p-4 flex justify-between items-center px-6">
         <Link to="/" className="flex items-center gap-2 py-2 cursor-pointer hover:opacity-80 transition-opacity">
 
           {/* 🔥 Logo Image (no bg) */}
@@ -73,10 +73,10 @@ const Home = () => {
       <aside className={`
         fixed inset-y-0 left-0 z-50 w-72 bg-white border-r border-gray-100 transition-transform duration-300 ease-in-out transform
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
-        md:translate-x-0 overflow-y-auto scrollbar-thin
+        lg:translate-x-0 overflow-y-auto scrollbar-thin
       `}>
-        <div className="p-8 -mt-14 md:mt-0">
-          <div className="mb-10 pt-4 md:pt-0">
+        <div className="p-8 -mt-14 lg:mt-0">
+          <div className="mb-10 pt-4 lg:pt-0">
             <Link to="/" className="flex items-center gap-2 py-2 cursor-pointer hover:opacity-80 transition-opacity">
 
               {/* 🔥 Logo Image (No BG) */}
@@ -137,7 +137,7 @@ const Home = () => {
       </aside>
 
       {/* --- CONTENT AREA (Outlet for nested routes) --- */}
-      <main className="flex-1 md:ml-72 p-4 sm:p-6 md:p-10 lg:p-14 min-h-screen relative pt-24 md:pt-10 overflow-x-hidden bg-gray-50">
+      <main className="mt-10 lg:mt-0 flex-1 lg:ml-72 p-4 sm:p-6 md:p-10 lg:p-14 min-h-screen relative pt-24 lg:pt-10 overflow-x-hidden bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <Outlet />
         </div>
@@ -147,7 +147,7 @@ const Home = () => {
       </main>
 
       {isSidebarOpen && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 md:hidden" onClick={() => setIsSidebarOpen(false)}></div>
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 lg:hidden" onClick={() => setIsSidebarOpen(false)}></div>
       )}
     </div>
   );
